@@ -1,37 +1,63 @@
 [gd_scene format=3 uid="uid://btfmbthvinx70"]
 
 [ext_resource type="Texture2D" uid="uid://c7k2a76raeh7c" path="res://icon.svg" id="1_t87ex"]
-[ext_resource type="Texture2D" uid="uid://dho4yybmygb1p" path="res://Assets/Log.png" id="2_5ylp3"]
+[ext_resource type="Texture2D" uid="uid://cfcd5eb8gl2qj" path="res://Assets/Floor.png" id="2_eqnvo"]
 [ext_resource type="PackedScene" uid="uid://ol04e8bm2ii4" path="res://Prefabs/player.tscn" id="2_hdxfg"]
+[ext_resource type="Script" uid="uid://cqku2yuuualcs" path="res://Scripts/Player/KillingGround.gd" id="3_5ylp3"]
+[ext_resource type="Texture2D" uid="uid://bswnunqsbreuc" path="res://Assets/Floor2.png" id="3_ufadg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svm2c"]
-size = Vector2(207.74016, 24)
+size = Vector2(186.6471, 24)
 
 [node name="Node2D" type="Node2D" unique_id=1095521290]
 position = Vector2(-1497, -106)
 
 [node name="Player" parent="." unique_id=360186703 instance=ExtResource("2_hdxfg")]
-position = Vector2(1, -257)
+position = Vector2(1, -258)
 SPEED = 600.0
 JUMP_VELOCITY = -800.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1517858438]
-position = Vector2(62, 64)
+position = Vector2(61, 64)
 
 [node name="floor" type="StaticBody2D" parent="." unique_id=1434740283]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=1888290639]
-position = Vector2(47.00003, 2)
+position = Vector2(-14, 2)
 scale = Vector2(5.6416636, -0.73287797)
 shape = SubResource("RectangleShape2D_svm2c")
 
-[node name="TextureRect" type="TextureRect" parent="floor" unique_id=342640701]
-offset_left = -575.0
-offset_top = -38.0
-offset_right = -475.0
-offset_bottom = 62.0
-scale = Vector2(12.599995, 1.0051153)
-texture = ExtResource("2_5ylp3")
+[node name="TextureRect" type="TextureRect" parent="floor" unique_id=1382244339]
+offset_left = -539.0
+offset_top = -5.0
+offset_right = -13.0
+offset_bottom = 110.0
+texture = ExtResource("2_eqnvo")
+
+[node name="TextureRect2" type="TextureRect" parent="floor" unique_id=290194154]
+offset_left = -13.0
+offset_top = -4.0
+offset_right = 513.0
+offset_bottom = 111.0
+texture = ExtResource("3_ufadg")
+
+[node name="KillingGround" type="Area2D" parent="." unique_id=1959087130 node_paths=PackedStringArray("lastSafeArea")]
+position = Vector2(600, 282)
+script = ExtResource("3_5ylp3")
+lastSafeArea = NodePath("../Node2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillingGround" unique_id=1511011335]
+position = Vector2(47, 2)
+scale = Vector2(5.6416636, -0.73287797)
+shape = SubResource("RectangleShape2D_svm2c")
+
+[node name="KillingGround2" type="StaticBody2D" parent="." unique_id=533915629]
+position = Vector2(-954, 259)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillingGround2" unique_id=356643623]
+position = Vector2(47, 2)
+scale = Vector2(5.6416636, -0.73287797)
+shape = SubResource("RectangleShape2D_svm2c")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=398614073]
 offset_left = -410.0
@@ -46,3 +72,11 @@ offset_top = -226.0
 offset_right = 470.0
 offset_bottom = -98.0
 texture = ExtResource("1_t87ex")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1593307334]
+position = Vector2(477, -111)
+
+[node name="Node2D2" type="Node2D" parent="." unique_id=1436688648]
+position = Vector2(-323, -111)
+
+[connection signal="body_entered" from="KillingGround" to="KillingGround" method="_on_body_entered"]
