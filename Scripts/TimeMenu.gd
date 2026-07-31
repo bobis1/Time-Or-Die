@@ -1,8 +1,11 @@
 extends CanvasLayer
 
+var ParentNode
+
 func _ready():
 	$TimePanel.hide()
 	$"Loading Panel".hide()
+	ParentNode = get_parent()
 
 func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("OpenTimeMenu"):
@@ -14,19 +17,19 @@ func _on_past_pressed():
 	if get_tree().has_group("TimeChangeScene"):
 		get_tree().paused = false
 		loadingScreen()
-		$"..".modulate = Color(1, 0, 0)
+		ParentNode.modulate = Color(1, 0, 0)
 
 func _on_present_pressed():
 	if get_tree().has_group("TimeChangeScene"):
 		get_tree().paused = false
 		loadingScreen()
-		$"..".modulate = Color(0, 1, 0)
+		ParentNode.modulate = Color(0, 1, 0)
 
 func _on_future_pressed():
 	if get_tree().has_group("TimeChangeScene"):
 		get_tree().paused = false
 		loadingScreen()
-		$"..".modulate = Color(0, 0, 1)
+		ParentNode.modulate = Color(0, 0, 1)
 
 func loadingScreen():
 	$TimeMenu.hide()

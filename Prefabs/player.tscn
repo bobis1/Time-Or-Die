@@ -38,7 +38,7 @@ position = Vector2(0, 35)
 shape = SubResource("RectangleShape2D_y5hcb")
 
 [node name="Arm2" type="RigidBody2D" parent="." unique_id=2009827089]
-position = Vector2(74, -15)
+position = Vector2(74, -16)
 collision_layer = 2
 mass = 0.001
 
@@ -60,3 +60,4 @@ node_b = NodePath("../Arm")
 position = Vector2(75, -37)
 node_a = NodePath("..")
 node_b = NodePath("../Arm2")
+softness = 3.0

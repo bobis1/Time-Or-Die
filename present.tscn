@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ol04e8bm2ii4" path="res://Prefabs/player.tscn" id="2_hdxfg"]
 [ext_resource type="Script" uid="uid://cqku2yuuualcs" path="res://Scripts/Player/KillingGround.gd" id="3_5ylp3"]
 [ext_resource type="Texture2D" uid="uid://bswnunqsbreuc" path="res://Assets/Floor2.png" id="3_ufadg"]
+[ext_resource type="PackedScene" path="res://Scenes/TimeMenu.tscn" id="6_ufadg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svm2c"]
 size = Vector2(186.6471, 24)
@@ -78,5 +79,7 @@ position = Vector2(477, -111)
 
 [node name="Node2D2" type="Node2D" parent="." unique_id=1436688648]
 position = Vector2(-323, -111)
+
+[node name="TimeMenu" parent="." unique_id=390901523 instance=ExtResource("6_ufadg")]
 
 [connection signal="body_entered" from="KillingGround" to="KillingGround" method="_on_body_entered"]
