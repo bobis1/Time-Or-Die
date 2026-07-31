@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://byqiotn23k8s3"]
+
+[ext_resource type="FontFile" uid="uid://dbg3mrrb1payx" path="res://Assets/BoldPixels/boldpixels.ttf" id="1_gun8v"]
+[ext_resource type="Script" uid="uid://d2khgtnptjyju" path="res://Scripts/TimeMenu.gd" id="1_x4r2h"]
+[ext_resource type="Texture2D" uid="uid://crhsrp4u5kp8" path="res://Assets/Pixel UI Pack/03.png" id="3_q24dy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q24dy"]
+atlas = ExtResource("3_q24dy")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6tg6"]
+atlas = ExtResource("3_q24dy")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1qnv"]
+atlas = ExtResource("3_q24dy")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lln4r"]
+atlas = ExtResource("3_q24dy")
+region = Rect2(144, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nbo1"]
+atlas = ExtResource("3_q24dy")
+region = Rect2(192, 48, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oq2o6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q24dy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6tg6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1qnv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lln4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nbo1")
+}],
+"loop": true,
+"name": &"Default",
+"speed": 5.0
+}]
+
+[node name="TimeMenu" type="CanvasLayer" unique_id=390901523]
+process_mode = 3
+script = ExtResource("1_x4r2h")
+
+[node name="TimePanel" type="Panel" parent="." unique_id=531245936]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="VBoxContainer" parent="TimePanel" unique_id=1546771766]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -29.5
+offset_right = 4.0
+offset_bottom = 29.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="TimePanel/Container" unique_id=1250713667]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gun8v")
+theme_override_font_sizes/font_size = 36
+text = "You have entered the Time Portal!
+Enter the Time you want to go:"
+horizontal_alignment = 1
+
+[node name="Past" type="Button" parent="TimePanel/Container" unique_id=1648152733]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gun8v")
+theme_override_font_sizes/font_size = 32
+text = "Past"
+
+[node name="Present" type="Button" parent="TimePanel/Container" unique_id=45229587]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gun8v")
+theme_override_font_sizes/font_size = 32
+text = "Present"
+
+[node name="Future" type="Button" parent="TimePanel/Container" unique_id=150935426]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gun8v")
+theme_override_font_sizes/font_size = 32
+text = "Future"
+
+[node name="Loading Panel" type="Panel" parent="." unique_id=2010910548]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="Loading Panel" unique_id=701623932]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+
+[node name="Animation" type="AnimatedSprite2D" parent="Loading Panel/Control" unique_id=1690827317]
+sprite_frames = SubResource("SpriteFrames_oq2o6")
+animation = &"Default"
+frame_progress = 0.91091746
+
+[connection signal="pressed" from="TimePanel/Container/Past" to="." method="_on_past_pressed"]
+[connection signal="pressed" from="TimePanel/Container/Present" to="." method="_on_present_pressed"]
+[connection signal="pressed" from="TimePanel/Container/Future" to="." method="_on_future_pressed"]
