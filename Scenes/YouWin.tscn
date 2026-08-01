@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bvqjejwvgahfm"]
+
+[ext_resource type="Script" uid="uid://d3lciyktp77ct" path="res://Scripts/youWin.gd" id="1_2qhhf"]
+[ext_resource type="FontFile" uid="uid://b7weglo7fwrs1" path="res://Assets/BoldPixels/BoldPixels.otf" id="1_rasc0"]
+
+[node name="YouWin" type="Node2D" unique_id=1129056003]
+script = ExtResource("1_2qhhf")
+
+[node name="Label" type="Label" parent="." unique_id=1032238214]
+offset_left = 395.0
+offset_top = 36.0
+offset_right = 451.0
+offset_bottom = 59.0
+scale = Vector2(6, 6)
+theme_override_fonts/font = ExtResource("1_rasc0")
+text = "You Win!"
+
+[node name="Start" type="Button" parent="." unique_id=1390248701]
+offset_left = 461.0
+offset_top = 200.00002
+offset_right = 531.0
+offset_bottom = 231.00002
+scale = Vector2(3, 3)
+text = "Restart"
+metadata/isSelected = false
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

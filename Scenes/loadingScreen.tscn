@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dnebk1o7aai1"]
+
+[ext_resource type="Texture2D" uid="uid://c7k2a76raeh7c" path="res://icon.svg" id="3_41a3d"]
+
+[node name="LoadingScreen" type="Node2D" unique_id=1407417441]
+
+[node name="Label" type="Label" parent="." unique_id=1152119811]
+offset_left = 499.0
+offset_top = 48.0
+offset_right = 674.0
+offset_bottom = 91.0
+theme_override_font_sizes/font_size = 42
+text = "Slow Cook"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1244585413]
+offset_left = 528.0
+offset_top = 105.0
+offset_right = 589.0
+offset_bottom = 157.0
+scale = Vector2(2, 2)
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=423692199]
+layout_mode = 2
+text = "Start"
+metadata/isSelected = false
+
+[node name="outline" type="TextureRect" parent="VBoxContainer/Start" unique_id=2071547107]
+z_index = -1
+layout_mode = 0
+offset_left = -2.5
+offset_right = 125.5
+offset_bottom = 128.0
+scale = Vector2(0.52, 0.22000003)
+texture = ExtResource("3_41a3d")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Options" type="Button" parent="VBoxContainer" unique_id=672848087]
+layout_mode = 2
+text = "Options"
+metadata/isSelected = false
+
+[node name="outline" type="TextureRect" parent="VBoxContainer/Options" unique_id=2079111592]
+z_index = -1
+layout_mode = 0
+offset_left = -2.5
+offset_right = 125.5
+offset_bottom = 128.0
+scale = Vector2(0.52, 0.22000003)
+texture = ExtResource("3_41a3d")

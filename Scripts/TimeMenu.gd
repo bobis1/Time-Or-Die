@@ -29,7 +29,10 @@ func _on_present_pressed():
 	if LevelNode.is_in_group("TimeChangeScene"):
 		get_tree().paused = false
 		loadingScreen(Color(1, 1, 1))
+<<<<<<< HEAD
 		$Grayscale.hide()
+=======
+>>>>>>> 4e09ef3e3b30e4ad77e625eb69cf803c1c29444c
 	else:
 		get_tree().paused = false
 		$Grayscale.hide()
@@ -38,8 +41,12 @@ func _on_present_pressed():
 func _on_future_pressed():
 	if LevelNode.is_in_group("TimeChangeScene"):
 		get_tree().paused = false
+<<<<<<< HEAD
 		$Grayscale.hide()
 		loadingScreen(Color(0.4, 0.4, 0.4))
+=======
+		loadingScreen(Color(0, 0.2, 0.6))
+>>>>>>> 4e09ef3e3b30e4ad77e625eb69cf803c1c29444c
 	else:
 		get_tree().paused = false
 		$Grayscale.hide()

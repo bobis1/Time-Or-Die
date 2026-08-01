@@ -22,6 +22,7 @@ Globals="*uid://bn18w7mpcyq4n"
 [global_group]
 
 TimeChangeScene=""
+Player=""
 
 [input]
 

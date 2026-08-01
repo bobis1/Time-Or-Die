@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://btfmbthvinx70"]
 
-[ext_resource type="Texture2D" uid="uid://c7k2a76raeh7c" path="res://icon.svg" id="1_t87ex"]
 [ext_resource type="Texture2D" uid="uid://cfcd5eb8gl2qj" path="res://Assets/Floor.png" id="2_eqnvo"]
 [ext_resource type="PackedScene" uid="uid://ol04e8bm2ii4" path="res://Prefabs/player.tscn" id="2_hdxfg"]
+[ext_resource type="Script" uid="uid://b7f6l3uaqqwgb" path="res://lives.gd" id="2_u4ipx"]
 [ext_resource type="Script" uid="uid://cqku2yuuualcs" path="res://Scripts/Player/KillingGround.gd" id="3_5ylp3"]
 [ext_resource type="Texture2D" uid="uid://bswnunqsbreuc" path="res://Assets/Floor2.png" id="3_ufadg"]
 [ext_resource type="PackedScene" uid="uid://dccbcpv4myn3e" path="res://Scenes/TimeMenu.tscn" id="6_ufadg"]
 [ext_resource type="Shader" uid="uid://choo073i5t2p6" path="res://grayscale.gdshader" id="7_6dhpk"]
+<<<<<<< HEAD
+=======
+[ext_resource type="Texture2D" uid="uid://ce30poorcrmtx" path="res://Assets/heart.png" id="8_wbeh7"]
+[ext_resource type="PackedScene" uid="uid://dray08srhtogo" path="res://Scenes/FamilyHeriloom.tscn" id="9_u4ipx"]
+>>>>>>> 4e09ef3e3b30e4ad77e625eb69cf803c1c29444c
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svm2c"]
 size = Vector2(186.6471, 24)
@@ -15,7 +20,7 @@ size = Vector2(186.6471, 24)
 shader = ExtResource("7_6dhpk")
 shader_parameter/intensity = 1.0
 
-[node name="Node2D" type="Node2D" unique_id=1095521290]
+[node name="Node2D" type="Node2D" unique_id=1095521290 groups=["TimeChangeScene"]]
 position = Vector2(-1497, -106)
 
 [node name="Player" parent="." unique_id=360186703 instance=ExtResource("2_hdxfg")]
@@ -25,6 +30,26 @@ JUMP_VELOCITY = -800.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1517858438]
 position = Vector2(61, 64)
+
+[node name="Lives" type="HBoxContainer" parent="Player" unique_id=170109445]
+offset_left = 152.0
+offset_top = -241.0
+offset_right = 1075.0
+offset_bottom = 7.0
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_u4ipx")
+
+[node name="TextureRect" type="TextureRect" parent="Player/Lives" unique_id=902050810]
+layout_mode = 2
+texture = ExtResource("8_wbeh7")
+
+[node name="TextureRect2" type="TextureRect" parent="Player/Lives" unique_id=1984625273]
+layout_mode = 2
+texture = ExtResource("8_wbeh7")
+
+[node name="TextureRect3" type="TextureRect" parent="Player/Lives" unique_id=1012447061]
+layout_mode = 2
+texture = ExtResource("8_wbeh7")
 
 [node name="floor" type="StaticBody2D" parent="." unique_id=1434740283]
 
@@ -57,27 +82,15 @@ position = Vector2(47, 2)
 scale = Vector2(5.6416636, -0.73287797)
 shape = SubResource("RectangleShape2D_svm2c")
 
-[node name="KillingGround2" type="StaticBody2D" parent="." unique_id=533915629]
+[node name="KillingGround2" type="Area2D" parent="." unique_id=1556000501 node_paths=PackedStringArray("lastSafeArea")]
 position = Vector2(-954, 259)
+script = ExtResource("3_5ylp3")
+lastSafeArea = NodePath("../Node2D2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillingGround2" unique_id=356643623]
 position = Vector2(47, 2)
 scale = Vector2(5.6416636, -0.73287797)
 shape = SubResource("RectangleShape2D_svm2c")
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=398614073]
-offset_left = -410.0
-offset_top = -226.0
-offset_right = -282.0
-offset_bottom = -98.0
-texture = ExtResource("1_t87ex")
-
-[node name="TextureRect2" type="TextureRect" parent="." unique_id=1719255101]
-offset_left = 342.0
-offset_top = -226.0
-offset_right = 470.0
-offset_bottom = -98.0
-texture = ExtResource("1_t87ex")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1593307334]
 position = Vector2(477, -111)
@@ -97,8 +110,17 @@ material = SubResource("ShaderMaterial_ufadg")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -74177.99
+offset_top = -74888.0
+offset_right = -69162.805
+offset_bottom = -65161.008
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(25.943903, 13.041649)
 
+[node name="FamilyHeriloom" parent="." unique_id=563021778 instance=ExtResource("9_u4ipx")]
+position = Vector2(476, -238.99998)
+scale = Vector2(10, 10)
+
 [connection signal="body_entered" from="KillingGround" to="KillingGround" method="_on_body_entered"]
+[connection signal="body_entered" from="KillingGround2" to="KillingGround2" method="_on_body_entered"]

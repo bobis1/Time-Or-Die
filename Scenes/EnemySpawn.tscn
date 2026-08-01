@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://3k2jy84hb0kn"]
+
+[ext_resource type="Texture2D" uid="uid://c7k2a76raeh7c" path="res://icon.svg" id="1_4bw2f"]
+[ext_resource type="Script" uid="uid://x1mrkywnaut3" path="res://Scripts/enemySpawn.gd" id="1_fm6i7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1b1y2"]
+
+[node name="EnemySpawn" type="StaticBody2D" unique_id=629988447]
+script = ExtResource("1_fm6i7")
+
+[node name="Timer" type="Timer" parent="." unique_id=1496502298]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=385660586]
+offset_left = -31.000002
+offset_top = -33.0
+offset_right = 97.0
+offset_bottom = 95.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_4bw2f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=688200454]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_1b1y2")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
