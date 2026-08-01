@@ -1,6 +1,9 @@
 extends CanvasLayer
 
+var LevelNode: Node2D 
+
 func _ready():
+	LevelNode = get_owner()
 	$TimePanel.hide()
 	$"Loading Panel".hide()
 
@@ -10,28 +13,34 @@ func _unhandled_input(event: InputEvent):
 		get_tree().paused = true
 
 func _on_past_pressed():
-	loadingScreen()
-	if get_tree().has_group("TimeChangeScene"):
+	if LevelNode.is_in_group("TimeChangeScene"):
 		get_tree().paused = false
-		loadingScreen()
-		$"..".modulate = Color(1, 0, 0)
+		loadingScreen(Color(1, 0, 0))
+	else:
+		get_tree().paused = false
+		$TimePanel.hide()
 
 func _on_present_pressed():
-	if get_tree().has_group("TimeChangeScene"):
+	if LevelNode.is_in_group("TimeChangeScene"):
 		get_tree().paused = false
-		loadingScreen()
-		$"..".modulate = Color(0, 1, 0)
+		loadingScreen(Color(0, 1, 0))
+	else:
+		get_tree().paused = false
+		$TimePanel.hide()
 
 func _on_future_pressed():
-	if get_tree().has_group("TimeChangeScene"):
+	if LevelNode.is_in_group("TimeChangeScene"):
 		get_tree().paused = false
-		loadingScreen()
-		$"..".modulate = Color(0, 0, 1)
+		loadingScreen(Color(0, 0, 1))
+	else:
+		get_tree().paused = false
+		$TimePanel.hide()
 
-func loadingScreen():
-	$TimeMenu.hide()
+func loadingScreen(color: Color):
+	$TimePanel.hide()
 	$"Loading Panel".show()
 	$"Loading Panel/Control/Animation".play("Default")
 	await get_tree().create_timer(2).timeout
 	$"Loading Panel/Control/Animation".stop()
 	$"Loading Panel".hide()
+	LevelNode.modulate = color
