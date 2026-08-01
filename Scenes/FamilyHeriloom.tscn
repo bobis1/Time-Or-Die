@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dray08srhtogo"]
+
+[ext_resource type="Script" uid="uid://d0bha6cvi3vci" path="res://Scripts/FamilyHeriloom.gd" id="1_ujnkw"]
+[ext_resource type="Texture2D" uid="uid://b7i1idhfu8fjw" path="res://Assets/crown.png" id="1_wffnd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hv0pl"]
+size = Vector2(20, 14)
+
+[node name="FamilyHeriloom" type="Area2D" unique_id=563021778]
+script = ExtResource("1_ujnkw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1239844714]
+shape = SubResource("RectangleShape2D_hv0pl")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1871960173]
+offset_left = -10.0
+offset_top = -7.0
+offset_right = 88.0
+offset_bottom = 61.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_wffnd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

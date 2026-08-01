@@ -10,13 +10,13 @@ size = Vector2(99, 297)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5hcb"]
 size = Vector2(46, 136)
 
-[node name="Player" type="CharacterBody2D" unique_id=360186703 node_paths=PackedStringArray("sprite")]
+[node name="Player" type="CharacterBody2D" unique_id=360186703 node_paths=PackedStringArray("sprite") groups=["Player"]]
 script = ExtResource("1_5wxv7")
 sprite = NodePath("Sprite2D")
 metadata/Health = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=741760033]
-position = Vector2(40.5, -20.5)
+position = Vector2(41, -20)
 shape = SubResource("RectangleShape2D_3icqa")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=607174704]

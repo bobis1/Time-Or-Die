@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://b81exmkkwukwp"]
+
+[ext_resource type="Texture2D" uid="uid://cam8bd0wd1pyu" path="res://Assets/missile.png" id="1_4vug3"]
+[ext_resource type="Script" uid="uid://cmdd8rsyy61bb" path="res://Scripts/missle.gd" id="1_bq2cw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pfwte"]
+
+[node name="Missle" type="RigidBody2D" unique_id=2090227441]
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_bq2cw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=79774140]
+shape = SubResource("CapsuleShape2D_pfwte")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=555959051]
+offset_left = -21.0
+offset_top = 22.0
+offset_right = 149.0
+offset_bottom = 194.0
+rotation = -1.5707964
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_4vug3")
+
+[node name="Timer" type="Timer" parent="." unique_id=788334080]
+wait_time = 3.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

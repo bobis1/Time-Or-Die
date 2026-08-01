@@ -25,7 +25,7 @@ func _on_past_pressed():
 func _on_present_pressed():
 	if LevelNode.is_in_group("TimeChangeScene"):
 		get_tree().paused = false
-		loadingScreen(Color(0, 1, 0))
+		loadingScreen(Color(1, 1, 1))
 	else:
 		get_tree().paused = false
 		$TimePanel.hide()
@@ -33,7 +33,7 @@ func _on_present_pressed():
 func _on_future_pressed():
 	if LevelNode.is_in_group("TimeChangeScene"):
 		get_tree().paused = false
-		loadingScreen(Color(0, 0, 1))
+		loadingScreen(Color(0, 0.2, 0.6))
 	else:
 		get_tree().paused = false
 		$TimePanel.hide()
