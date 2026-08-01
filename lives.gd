@@ -10,10 +10,8 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if Globals.lives == 2:
-		liveSprites[0].hide()
-	elif Globals.lives == 1:
-		liveSprites[1].hide()
-	elif  Globals.lives == 0:
-		liveSprites[2].hide()
+	if Globals.lives < 3:
+		liveSprites[Globals.lives].hide()
+	if Globals.lives == 0:
+		get_tree().change_scene_to_file("res://Scenes/LevelSelect.tscn")
 		

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d3lciyktp77ct" path="res://Scripts/youWin.gd" id="1_2qhhf"]
 [ext_resource type="FontFile" uid="uid://b7weglo7fwrs1" path="res://Assets/BoldPixels/BoldPixels.otf" id="1_rasc0"]
+[ext_resource type="FontFile" uid="uid://dbg3mrrb1payx" path="res://Assets/BoldPixels/boldpixels.ttf" id="3_uthr7"]
 
 [node name="YouWin" type="Node2D" unique_id=1129056003]
 script = ExtResource("1_2qhhf")
@@ -16,11 +17,12 @@ theme_override_fonts/font = ExtResource("1_rasc0")
 text = "You Win!"
 
 [node name="Start" type="Button" parent="." unique_id=1390248701]
-offset_left = 461.0
-offset_top = 200.00002
-offset_right = 531.0
-offset_bottom = 231.00002
+offset_left = 460.0
+offset_top = 200.0
+offset_right = 530.0
+offset_bottom = 231.0
 scale = Vector2(3, 3)
+theme_override_fonts/font = ExtResource("3_uthr7")
 text = "Restart"
 metadata/isSelected = false
 

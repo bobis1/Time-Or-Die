@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://mbaxn66e1ajx"]
+
+[ext_resource type="Script" uid="uid://oph3s32emdm6" path="res://Scripts/charger.gd" id="1_iabbt"]
+[ext_resource type="Texture2D" path="res://Assets/Charger.png" id="1_rwgi7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjgtw"]
+size = Vector2(110, 70)
+
+[node name="Charger" type="RigidBody2D" unique_id=1987823572]
+script = ExtResource("1_iabbt")
+
+[node name="Timer" type="Timer" parent="." unique_id=2010568935]
+wait_time = 3.0
+
+[node name="Timer2" type="Timer" parent="Timer" unique_id=1150851459]
+wait_time = 0.25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=730659954]
+position = Vector2(-45, 28)
+shape = SubResource("RectangleShape2D_qjgtw")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1537396856]
+offset_left = -100.0
+offset_top = -64.0
+offset_right = 19.0
+offset_bottom = 63.0
+texture = ExtResource("1_rwgi7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer/Timer2" to="." method="_on_timer_2_timeout"]
