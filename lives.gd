@@ -13,5 +13,5 @@ func _physics_process(_delta: float) -> void:
 	if Globals.lives < 3:
 		liveSprites[Globals.lives].hide()
 	if Globals.lives == 0:
-		get_tree().change_scene_to_file("res://Scenes/LevelSelect.tscn")
+		get_tree().change_scene_to_file("res://Level Select.tscn")
 		

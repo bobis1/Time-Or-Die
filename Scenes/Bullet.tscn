@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://3m63da0kn36c" path="res://Scripts/Bullet.gd" id="1_vlxeq"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vlxeq"]
+size = Vector2(117, 20)
+
 [node name="Bullet" type="Area2D" unique_id=1186623106]
 script = ExtResource("1_vlxeq")
 
@@ -11,3 +14,7 @@ offset_right = 100.0
 offset_bottom = 5.0
 
 [node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=8692936]
+position = Vector2(46.5, 1)
+shape = SubResource("RectangleShape2D_vlxeq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

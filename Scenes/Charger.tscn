@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cnk0ac72nqftg" path="res://Assets/Cruirasuir.png" id="1_rwgi7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qjgtw"]
-size = Vector2(110, 70)
+size = Vector2(122, 128)
 
 [node name="Charger" type="RigidBody2D" unique_id=1987823572]
 script = ExtResource("1_iabbt")
@@ -16,7 +16,7 @@ wait_time = 3.0
 wait_time = 0.25
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=730659954]
-position = Vector2(-45, 28)
+position = Vector2(-43, 0)
 shape = SubResource("RectangleShape2D_qjgtw")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1537396856]
