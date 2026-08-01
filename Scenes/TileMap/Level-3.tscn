@@ -152,4 +152,4 @@ offset_bottom = -726.0
 text = "Future"
 
 [node name="Dynamic" parent="." unique_id=1242925952 instance=ExtResource("3_g3khv")]
-position = Vector2(775, -28)
+position = Vector2(2629, -819)

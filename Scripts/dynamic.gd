@@ -28,9 +28,19 @@ func _spawn_era_object(era: String) -> void:
 		
 	if scene_to_spawn == null:
 		return
-
+	if era == "Present" || era == "Past":
+		$Timer.start()
+	else:
+		$Timer.stop() 
 	current_spawned_object = scene_to_spawn.instantiate()
 	
 	add_child(current_spawned_object)
 	
 	current_spawned_object.global_position = global_position
+
+
+func _on_timer_timeout() -> void:
+	if Globals.currentTime != "Future":
+		_spawn_era_object(Globals.currentTime)
+	$Timer.start()
+	pass
