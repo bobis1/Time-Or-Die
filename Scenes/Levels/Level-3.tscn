@@ -1,71 +1,39 @@
-[gd_scene format=3 uid="uid://4kqqkhhogo7y"]
+[gd_scene format=3 uid="uid://hw7hi03d3ph7"]
 
 [ext_resource type="PackedScene" uid="uid://dray08srhtogo" path="res://Scenes/FamilyHeriloom.tscn" id="1_kca5f"]
 [ext_resource type="PackedScene" uid="uid://ol04e8bm2ii4" path="res://Prefabs/player.tscn" id="2_tqeg5"]
-[ext_resource type="Script" uid="uid://b7f6l3uaqqwgb" path="res://lives.gd" id="3_am62g"]
-[ext_resource type="Texture2D" uid="uid://ce30poorcrmtx" path="res://Assets/heart.png" id="4_4q6ab"]
-[ext_resource type="Script" uid="uid://cqku2yuuualcs" path="res://Scripts/Player/KillingGround.gd" id="5_7xox2"]
+[ext_resource type="Script" uid="uid://bp71p318uoxi" path="res://Scripts/Killzone.gd" id="3_3p4p7"]
 [ext_resource type="PackedScene" uid="uid://dccbcpv4myn3e" path="res://Scenes/TimeMenu.tscn" id="6_r725w"]
-[ext_resource type="PackedScene" uid="uid://b4p6cvnb262xq" path="res://Scenes/TileMap/Level-3.tscn" id="7_kca5f"]
+[ext_resource type="PackedScene" uid="uid://duoxu2spje7pd" path="res://Scenes/TileMap/Level-3.tscn" id="7_kca5f"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t07gs"]
-size = Vector2(52.274765, 14.554489)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uevwl"]
 
 [node name="Level" type="Node2D" unique_id=697117047 groups=["TimeChangeScene"]]
 
-[node name="FamilyHeriloom" parent="." unique_id=563021778 instance=ExtResource("1_kca5f")]
-position = Vector2(3687, -1838)
-scale = Vector2(6, 6)
-
-[node name="Node2D" type="Node2D" parent="." unique_id=2110090072]
-position = Vector2(682, 199)
-scale = Vector2(6, 6)
-
-[node name="Node2D2" type="Node2D" parent="." unique_id=1860005043]
-position = Vector2(1786, 199)
-scale = Vector2(6, 6)
+[node name="TileMap" parent="." unique_id=882838685 instance=ExtResource("7_kca5f")]
+position = Vector2(0, -1)
 
 [node name="Player" parent="." unique_id=360186703 instance=ExtResource("2_tqeg5")]
 position = Vector2(626, -56)
 SPEED = 600.0
 JUMP_VELOCITY = -800.0
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=416328624]
+[node name="Camera" type="Camera2D" parent="Player" unique_id=416328624]
 position = Vector2(61, 64)
+limit_left = -3600
+limit_bottom = 1400
 
-[node name="Lives" type="HBoxContainer" parent="Player" unique_id=1670042314]
-offset_left = 152.0
-offset_top = -241.0
-offset_right = 1075.0
-offset_bottom = 7.0
-scale = Vector2(0.5, 0.5)
-script = ExtResource("3_am62g")
+[node name="Killzone" type="Area2D" parent="." unique_id=1075720790]
+position = Vector2(0, 1400)
+script = ExtResource("3_3p4p7")
 
-[node name="TextureRect" type="TextureRect" parent="Player/Lives" unique_id=598868814]
-layout_mode = 2
-texture = ExtResource("4_4q6ab")
+[node name="Boundary" type="CollisionShape2D" parent="Killzone" unique_id=480383650]
+shape = SubResource("WorldBoundaryShape2D_uevwl")
 
-[node name="TextureRect2" type="TextureRect" parent="Player/Lives" unique_id=355363204]
-layout_mode = 2
-texture = ExtResource("4_4q6ab")
-
-[node name="TextureRect3" type="TextureRect" parent="Player/Lives" unique_id=1488024478]
-layout_mode = 2
-texture = ExtResource("4_4q6ab")
-
-[node name="KillingGround" type="Area2D" parent="." unique_id=1419283221 node_paths=PackedStringArray("lastSafeArea")]
-position = Vector2(45, 527)
+[node name="FamilyHeriloom" parent="." unique_id=563021778 instance=ExtResource("1_kca5f")]
+position = Vector2(3687, -1838)
 scale = Vector2(6, 6)
-script = ExtResource("5_7xox2")
-lastSafeArea = NodePath("../Node2D")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillingGround" unique_id=2128710516]
-position = Vector2(269.5417, 104.666664)
-scale = Vector2(5.641664, -0.73287797)
-shape = SubResource("RectangleShape2D_t07gs")
 
 [node name="TimeMenu" parent="." unique_id=390901523 instance=ExtResource("6_r725w")]
 
-[node name="TileMap" parent="." unique_id=882838685 instance=ExtResource("7_kca5f")]
-
-[connection signal="body_entered" from="KillingGround" to="KillingGround" method="_on_body_entered"]
+[connection signal="body_entered" from="Killzone" to="Killzone" method="_on_body_entered"]
