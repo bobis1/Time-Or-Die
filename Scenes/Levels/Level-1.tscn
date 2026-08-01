@@ -1,13 +1,11 @@
 [gd_scene format=3 uid="uid://biuu802fd6sva"]
 
 [ext_resource type="PackedScene" uid="uid://ol04e8bm2ii4" path="res://Prefabs/player.tscn" id="1_3gigh"]
-[ext_resource type="PackedScene" uid="uid://b45ofa1wxcqi2" path="res://Scenes/TileMap/Level-1.tscn" id="2_6u60d"]
 [ext_resource type="PackedScene" uid="uid://dccbcpv4myn3e" path="res://Scenes/TimeMenu.tscn" id="2_8r5np"]
-[ext_resource type="Script" uid="uid://b7f6l3uaqqwgb" path="res://lives.gd" id="3_d01u6"]
-[ext_resource type="Texture2D" uid="uid://ce30poorcrmtx" path="res://Assets/heart.png" id="4_5hdhp"]
 [ext_resource type="PackedScene" uid="uid://dray08srhtogo" path="res://Scenes/FamilyHeriloom.tscn" id="5_5hdhp"]
 [ext_resource type="PackedScene" uid="uid://bm7wv4krbn0kl" path="res://Scenes/Turret.tscn" id="6_8r5np"]
 [ext_resource type="Script" uid="uid://cqku2yuuualcs" path="res://Scripts/Player/KillingGround.gd" id="6_75qqu"]
+[ext_resource type="PackedScene" uid="uid://lxcapyreqm2x" path="res://Scenes/HUD.tscn" id="6_t07gs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t07gs"]
 size = Vector2(52.274765, 14.554489)
@@ -26,8 +24,6 @@ scale = Vector2(6, 6)
 position = Vector2(1786, 199)
 scale = Vector2(6, 6)
 
-[node name="TileMap" parent="." unique_id=882838685 instance=ExtResource("2_6u60d")]
-
 [node name="Player" parent="." unique_id=360186703 instance=ExtResource("1_3gigh")]
 position = Vector2(485, -264)
 SPEED = 600.0
@@ -35,26 +31,6 @@ JUMP_VELOCITY = -800.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=416328624]
 position = Vector2(61, 64)
-
-[node name="Lives" type="HBoxContainer" parent="Player" unique_id=1670042314]
-offset_left = 152.0
-offset_top = -241.0
-offset_right = 1075.0
-offset_bottom = 7.0
-scale = Vector2(0.5, 0.5)
-script = ExtResource("3_d01u6")
-
-[node name="TextureRect" type="TextureRect" parent="Player/Lives" unique_id=598868814]
-layout_mode = 2
-texture = ExtResource("4_5hdhp")
-
-[node name="TextureRect2" type="TextureRect" parent="Player/Lives" unique_id=355363204]
-layout_mode = 2
-texture = ExtResource("4_5hdhp")
-
-[node name="TextureRect3" type="TextureRect" parent="Player/Lives" unique_id=1488024478]
-layout_mode = 2
-texture = ExtResource("4_5hdhp")
 
 [node name="Turrent" type="Node2D" parent="." unique_id=1654418436]
 
@@ -73,5 +49,7 @@ scale = Vector2(5.641664, -0.73287797)
 shape = SubResource("RectangleShape2D_t07gs")
 
 [node name="TimeMenu" parent="." unique_id=390901523 instance=ExtResource("2_8r5np")]
+
+[node name="HUD" parent="." unique_id=398721829 instance=ExtResource("6_t07gs")]
 
 [connection signal="body_entered" from="KillingGround" to="KillingGround" method="_on_body_entered"]

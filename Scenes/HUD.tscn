@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://lxcapyreqm2x"]
+
+[ext_resource type="Script" uid="uid://b7f6l3uaqqwgb" path="res://lives.gd" id="1_jo1ms"]
+[ext_resource type="Texture2D" uid="uid://ce30poorcrmtx" path="res://Assets/heart.png" id="2_psnte"]
+
+[node name="HUD" type="CanvasLayer" unique_id=398721829]
+
+[node name="Lives" type="HBoxContainer" parent="." unique_id=1791040209]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1127.0
+offset_top = 25.0
+offset_right = -204.0
+offset_bottom = 273.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_jo1ms")
+
+[node name="TextureRect" type="TextureRect" parent="Lives" unique_id=1315520047]
+layout_mode = 2
+texture = ExtResource("2_psnte")
+
+[node name="TextureRect2" type="TextureRect" parent="Lives" unique_id=1188201847]
+layout_mode = 2
+texture = ExtResource("2_psnte")
+
+[node name="TextureRect3" type="TextureRect" parent="Lives" unique_id=711807761]
+layout_mode = 2
+texture = ExtResource("2_psnte")
