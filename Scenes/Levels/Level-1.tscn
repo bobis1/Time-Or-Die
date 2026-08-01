@@ -3,58 +3,40 @@
 [ext_resource type="PackedScene" uid="uid://ol04e8bm2ii4" path="res://Prefabs/player.tscn" id="1_3gigh"]
 [ext_resource type="PackedScene" uid="uid://b45ofa1wxcqi2" path="res://Scenes/TileMap/Level-1.tscn" id="2_6u60d"]
 [ext_resource type="PackedScene" uid="uid://dccbcpv4myn3e" path="res://Scenes/TimeMenu.tscn" id="2_8r5np"]
+[ext_resource type="Script" uid="uid://bp71p318uoxi" path="res://Scripts/Killzone.gd" id="3_75qqu"]
 [ext_resource type="PackedScene" uid="uid://dray08srhtogo" path="res://Scenes/FamilyHeriloom.tscn" id="5_5hdhp"]
-[ext_resource type="PackedScene" uid="uid://bm7wv4krbn0kl" path="res://Scenes/Turret.tscn" id="6_8r5np"]
-[ext_resource type="Script" uid="uid://cqku2yuuualcs" path="res://Scripts/Player/KillingGround.gd" id="6_75qqu"]
-[ext_resource type="PackedScene" path="res://Scenes/HUD.tscn" id="6_t07gs"]
+[ext_resource type="PackedScene" uid="uid://lxcapyreqm2x" path="res://Scenes/HUD.tscn" id="6_t07gs"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t07gs"]
-size = Vector2(132.67363, 9.778801)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5hdhp"]
 
 [node name="Level" type="Node2D" unique_id=697117047 groups=["TimeChangeScene"]]
 
-[node name="FamilyHeriloom" parent="." unique_id=563021778 instance=ExtResource("5_5hdhp")]
-position = Vector2(8036, -358)
-scale = Vector2(6, 6)
-
-[node name="Node2D" type="Node2D" parent="." unique_id=2110090072]
-position = Vector2(682, 199)
-scale = Vector2(6, 6)
-
-[node name="Node2D2" type="Node2D" parent="." unique_id=1860005043]
-position = Vector2(1786, 199)
-scale = Vector2(6, 6)
+[node name="TileMap" parent="." unique_id=882838685 instance=ExtResource("2_6u60d")]
+position = Vector2(0, -1)
 
 [node name="Player" parent="." unique_id=360186703 instance=ExtResource("1_3gigh")]
-position = Vector2(485, -264)
+position = Vector2(-1691, -220)
 SPEED = 600.0
-JUMP_VELOCITY = -800.0
+JUMP_VELOCITY = -1000.0
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=416328624]
+[node name="Camera" type="Camera2D" parent="Player" unique_id=416328624]
 position = Vector2(61, 64)
+limit_left = -3000
+limit_bottom = 812
 
-[node name="Turrent" type="Node2D" parent="." unique_id=1654418436]
+[node name="Killzone" type="Area2D" parent="." unique_id=1844509285]
+position = Vector2(0, 812)
+script = ExtResource("3_75qqu")
 
-[node name="Turret" parent="Turrent" unique_id=1586562824 instance=ExtResource("6_8r5np")]
-position = Vector2(2289, -74)
+[node name="Boundary" type="CollisionShape2D" parent="Killzone" unique_id=1010273747]
+shape = SubResource("WorldBoundaryShape2D_5hdhp")
 
-[node name="KillingGround" type="Area2D" parent="." unique_id=1419283221 node_paths=PackedStringArray("lastSafeArea")]
-position = Vector2(45, 527)
+[node name="FamilyHeriloom" parent="." unique_id=563021778 instance=ExtResource("5_5hdhp")]
+position = Vector2(9007, -87)
 scale = Vector2(6, 6)
-script = ExtResource("6_75qqu")
-lastSafeArea = NodePath("../Node2D")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillingGround" unique_id=2128710516]
-position = Vector2(371.08334, 106.416664)
-scale = Vector2(5.641664, -0.73287797)
-shape = SubResource("RectangleShape2D_t07gs")
 
 [node name="TimeMenu" parent="." unique_id=390901523 instance=ExtResource("2_8r5np")]
 
 [node name="HUD" parent="." unique_id=398721829 instance=ExtResource("6_t07gs")]
 
-[node name="TileMap" parent="." unique_id=882838685 instance=ExtResource("2_6u60d")]
-position = Vector2(485, -264)
-scale = Vector2(4, 4)
-
-[connection signal="body_entered" from="KillingGround" to="KillingGround" method="_on_body_entered"]
+[connection signal="body_entered" from="Killzone" to="Killzone" method="_on_body_entered"]

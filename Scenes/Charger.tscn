@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://mbaxn66e1ajx"]
 
-[ext_resource type="Script" uid="uid://oph3s32emdm6" path="res://Scripts/charger.gd" id="1_iabbt"]
-[ext_resource type="Texture2D" path="res://Assets/Charger.png" id="1_rwgi7"]
+[ext_resource type="Script" path="res://Scripts/charger.gd" id="1_iabbt"]
+[ext_resource type="Texture2D" uid="uid://cnk0ac72nqftg" path="res://Assets/Cruirasuir.png" id="1_rwgi7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qjgtw"]
 size = Vector2(110, 70)
