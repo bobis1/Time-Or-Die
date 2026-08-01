@@ -16,6 +16,7 @@ offset_top = 31.000002
 offset_right = 463.0
 offset_bottom = 54.0
 scale = Vector2(3, 3)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("1_r4p04")
 text = "Time Or Die"
 
@@ -101,7 +102,7 @@ offset_bottom = 278.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "PLACEHOLDER"
 script = ExtResource("6_1tn17")
-Phrases = Array[String](["How are you today?", "How nice!", "blahblah", "wehee", "bananas are great", "Vote for us", "Gelato", "Weheehee", "Not on steam", "crazy"])
+Phrases = Array[String](["How are you today?", "How nice!", "blahblah", "wehee", "bananas are great", "Vote for us", "Gelato", "Weheehee", "Not on steam", "crazy", "You stare too much", "its hackin time", "lets get crackalackin"])
 
 [node name="Timer" type="Timer" parent="PlayerRig/Label" unique_id=1474973396]
 wait_time = 5.0
