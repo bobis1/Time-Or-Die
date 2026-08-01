@@ -2,6 +2,8 @@ extends CanvasLayer
 
 var LevelNode: Node2D
 
+signal timeChanged()
+
 func _ready():
 	LevelNode = get_owner()
 	$Grayscale.hide()
@@ -11,35 +13,38 @@ func _ready():
 func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("OpenTimeMenu"):
 		$TimePanel.show()
-		get_tree().paused = true
+	#	get_tree().paused = true
 
 func _on_past_pressed():
 	if LevelNode.is_in_group("TimeChangeScene"):
-		get_tree().paused = false
+		#get_tree().paused = false
 		loadingScreen(Color(1, 1, 1))
 		$Grayscale.show()
+		timeChanged.emit()
 	else:
-		get_tree().paused = false
+		#get_tree().paused = false
 		$Grayscale.hide()
 		$TimePanel.hide()
 
 func _on_present_pressed():
 	if LevelNode.is_in_group("TimeChangeScene"):
-		get_tree().paused = false
+		#get_tree().paused = false
 		loadingScreen(Color(1, 1, 1))
 		$Grayscale.hide()
+		timeChanged.emit()
 	else:
-		get_tree().paused = false
+		#get_tree().paused = false
 		$Grayscale.hide()
 		$TimePanel.hide()
 
 func _on_future_pressed():
 	if LevelNode.is_in_group("TimeChangeScene"):
-		get_tree().paused = false
+		#get_tree().paused = false
 		$Grayscale.hide()
 		loadingScreen(Color(0.4, 0.4, 0.4))
+		timeChanged.emit()
 	else:
-		get_tree().paused = false
+		#get_tree().paused = false
 		$Grayscale.hide()
 		$TimePanel.hide()
 

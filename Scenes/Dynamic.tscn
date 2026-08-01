@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://dy0vwjgltm1aw"]
 
 [ext_resource type="Script" uid="uid://pqjwms0o272s" path="res://Scripts/dynamic.gd" id="1_v25rr"]
+[ext_resource type="PackedScene" uid="uid://duc04bab7pil3" path="res://Scenes/Charger.tscn" id="2_686dq"]
+[ext_resource type="PackedScene" uid="uid://b81exmkkwukwp" path="res://Scenes/missle.tscn" id="2_qycmr"]
 
 [node name="Dynamic" type="Node2D" unique_id=1242925952]
 script = ExtResource("1_v25rr")
+PastDyn = ExtResource("2_686dq")
+PresDyn = ExtResource("2_qycmr")

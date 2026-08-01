@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://cx1hj7j4bb6fn"]
+
+[ext_resource type="Script" uid="uid://cthc3br7tse84" path="res://Scripts/levelSelect.gd" id="1_1cuwq"]
+[ext_resource type="FontFile" uid="uid://dbg3mrrb1payx" path="res://Assets/BoldPixels/boldpixels.ttf" id="1_r4p04"]
+[ext_resource type="Texture2D" uid="uid://cccltio2dnudl" path="res://Assets/PlayerBody.png" id="3_30a6j"]
+[ext_resource type="Texture2D" uid="uid://dvlk2tmh7vk76" path="res://Assets/PlayerArms.png" id="4_gdvsk"]
+
+[node name="LevelSelect" type="Node2D" unique_id=104113014]
+script = ExtResource("1_1cuwq")
+
+[node name="Label" type="Label" parent="." unique_id=1555385744]
+offset_left = 380.0
+offset_top = 31.000002
+offset_right = 463.0
+offset_bottom = 54.0
+scale = Vector2(3, 3)
+theme_override_fonts/font = ExtResource("1_r4p04")
+text = "Time Or Die"
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1744094435]
+offset_left = 244.0
+offset_top = 100.0
+offset_right = 359.0
+offset_bottom = 140.0
+scale = Vector2(5, 5)
+columns = 5
+
+[node name="1" type="Button" parent="GridContainer" unique_id=1002984528]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_r4p04")
+text = "1"
+
+[node name="2" type="Button" parent="GridContainer" unique_id=1821854508]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_r4p04")
+text = "2"
+
+[node name="3" type="Button" parent="GridContainer" unique_id=1706066554]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_r4p04")
+text = "3"
+
+[node name="Bounus" type="Button" parent="GridContainer" unique_id=978737550]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_r4p04")
+text = "Bounus"
+
+[node name="PlayerRig" type="Control" parent="." unique_id=1564041237]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -766.0
+offset_top = 3.0
+offset_right = -726.0
+offset_bottom = 43.0
+
+[node name="TextureRect" type="TextureRect" parent="PlayerRig" unique_id=649282681]
+layout_mode = 0
+offset_left = 869.0
+offset_top = 320.0
+offset_right = 970.0
+offset_bottom = 617.0
+texture = ExtResource("3_30a6j")
+
+[node name="TextureRect2" type="TextureRect" parent="PlayerRig" unique_id=788179858]
+layout_mode = 0
+offset_left = 869.0
+offset_top = 452.99994
+offset_right = 1056.0
+offset_bottom = 999.99994
+rotation = -3.3962295
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_gdvsk")
+
+[node name="TextureRect3" type="TextureRect" parent="PlayerRig" unique_id=326810285]
+layout_mode = 0
+offset_left = 1014.00006
+offset_top = 462.00003
+offset_right = 1201.0
+offset_bottom = 1009.0
+rotation = -2.6892405
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_gdvsk")
+
+[connection signal="pressed" from="GridContainer/1" to="." method="_on1__pressed"]
+[connection signal="pressed" from="GridContainer/2" to="." method="_on2__pressed"]
+[connection signal="pressed" from="GridContainer/3" to="." method="_on3__pressed"]
+[connection signal="pressed" from="GridContainer/Bounus" to="." method="_on_bounus_pressed"]

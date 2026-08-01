@@ -1,19 +1,19 @@
-[gd_scene format=3 uid="uid://biuu802fd6sva"]
+[gd_scene format=3 uid="uid://djl8wl1gsylr3"]
 
-[ext_resource type="PackedScene" uid="uid://ol04e8bm2ii4" path="res://Prefabs/player.tscn" id="1_3gigh"]
-[ext_resource type="PackedScene" uid="uid://b45ofa1wxcqi2" path="res://Scenes/TileMap/Level-1.tscn" id="2_6u60d"]
-[ext_resource type="PackedScene" uid="uid://dccbcpv4myn3e" path="res://Scenes/TimeMenu.tscn" id="2_8r5np"]
-[ext_resource type="Script" uid="uid://b7f6l3uaqqwgb" path="res://lives.gd" id="3_d01u6"]
-[ext_resource type="Texture2D" uid="uid://ce30poorcrmtx" path="res://Assets/heart.png" id="4_5hdhp"]
-[ext_resource type="PackedScene" uid="uid://dray08srhtogo" path="res://Scenes/FamilyHeriloom.tscn" id="5_5hdhp"]
-[ext_resource type="Script" uid="uid://cqku2yuuualcs" path="res://Scripts/Player/KillingGround.gd" id="6_75qqu"]
+[ext_resource type="PackedScene" uid="uid://dray08srhtogo" path="res://Scenes/FamilyHeriloom.tscn" id="1_bomoa"]
+[ext_resource type="PackedScene" uid="uid://ol04e8bm2ii4" path="res://Prefabs/player.tscn" id="3_vs31q"]
+[ext_resource type="Script" uid="uid://b7f6l3uaqqwgb" path="res://lives.gd" id="4_83jt6"]
+[ext_resource type="Texture2D" uid="uid://ce30poorcrmtx" path="res://Assets/heart.png" id="5_8yefm"]
+[ext_resource type="Script" uid="uid://cqku2yuuualcs" path="res://Scripts/Player/KillingGround.gd" id="6_0rtsb"]
+[ext_resource type="PackedScene" uid="uid://c2wnkokcjsywx" path="res://Scenes/TileMap/Level-2.tscn" id="7_bomoa"]
+[ext_resource type="PackedScene" uid="uid://dccbcpv4myn3e" path="res://Scenes/TimeMenu.tscn" id="7_yqxct"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t07gs"]
 size = Vector2(52.274765, 14.554489)
 
 [node name="Level" type="Node2D" unique_id=697117047 groups=["TimeChangeScene"]]
 
-[node name="FamilyHeriloom" parent="." unique_id=563021778 instance=ExtResource("5_5hdhp")]
+[node name="FamilyHeriloom" parent="." unique_id=563021778 instance=ExtResource("1_bomoa")]
 position = Vector2(3687, -1838)
 scale = Vector2(6, 6)
 
@@ -25,10 +25,8 @@ scale = Vector2(6, 6)
 position = Vector2(1786, 199)
 scale = Vector2(6, 6)
 
-[node name="TileMap" parent="." unique_id=882838685 instance=ExtResource("2_6u60d")]
-
-[node name="Player" parent="." unique_id=360186703 instance=ExtResource("1_3gigh")]
-position = Vector2(485, -264)
+[node name="Player" parent="." unique_id=360186703 instance=ExtResource("3_vs31q")]
+position = Vector2(626, -56)
 SPEED = 600.0
 JUMP_VELOCITY = -800.0
 
@@ -41,24 +39,24 @@ offset_top = -241.0
 offset_right = 1075.0
 offset_bottom = 7.0
 scale = Vector2(0.5, 0.5)
-script = ExtResource("3_d01u6")
+script = ExtResource("4_83jt6")
 
 [node name="TextureRect" type="TextureRect" parent="Player/Lives" unique_id=598868814]
 layout_mode = 2
-texture = ExtResource("4_5hdhp")
+texture = ExtResource("5_8yefm")
 
 [node name="TextureRect2" type="TextureRect" parent="Player/Lives" unique_id=355363204]
 layout_mode = 2
-texture = ExtResource("4_5hdhp")
+texture = ExtResource("5_8yefm")
 
 [node name="TextureRect3" type="TextureRect" parent="Player/Lives" unique_id=1488024478]
 layout_mode = 2
-texture = ExtResource("4_5hdhp")
+texture = ExtResource("5_8yefm")
 
 [node name="KillingGround" type="Area2D" parent="." unique_id=1419283221 node_paths=PackedStringArray("lastSafeArea")]
 position = Vector2(45, 527)
 scale = Vector2(6, 6)
-script = ExtResource("6_75qqu")
+script = ExtResource("6_0rtsb")
 lastSafeArea = NodePath("../Node2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillingGround" unique_id=2128710516]
@@ -66,6 +64,8 @@ position = Vector2(269.5417, 104.666664)
 scale = Vector2(5.641664, -0.73287797)
 shape = SubResource("RectangleShape2D_t07gs")
 
-[node name="TimeMenu" parent="." unique_id=390901523 instance=ExtResource("2_8r5np")]
+[node name="TimeMenu" parent="." unique_id=390901523 instance=ExtResource("7_yqxct")]
+
+[node name="TileMap" parent="." unique_id=882838685 instance=ExtResource("7_bomoa")]
 
 [connection signal="body_entered" from="KillingGround" to="KillingGround" method="_on_body_entered"]

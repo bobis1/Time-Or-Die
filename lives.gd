@@ -16,4 +16,6 @@ func _physics_process(delta: float) -> void:
 		liveSprites[1].hide()
 	elif  Globals.lives == 0:
 		liveSprites[2].hide()
+	else:
+		get_tree().change_scene_to_file("res://Scenes/Levels/Level-1.tscn")
 		
