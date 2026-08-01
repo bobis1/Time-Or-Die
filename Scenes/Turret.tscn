@@ -1,8 +1,36 @@
 [gd_scene format=3 uid="uid://bm7wv4krbn0kl"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1v5mn"]
+[ext_resource type="Texture2D" uid="uid://ddxuqneno3yqi" path="res://Assets/TurretBottom.png" id="1_64uvh"]
+[ext_resource type="Script" uid="uid://da2yv0p5m5875" path="res://Scripts/Turret.gd" id="1_i4wwf"]
+[ext_resource type="Texture2D" uid="uid://c0wxa8s3ensxx" path="res://Assets/TurretTop.png" id="2_i4wwf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i4wwf"]
+size = Vector2(210, 212)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i4wwf"]
+radius = 737.19604
 
 [node name="Turret" type="StaticBody2D" unique_id=1586562824]
+collision_layer = 2
+script = ExtResource("1_i4wwf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=153880886]
-shape = SubResource("RectangleShape2D_1v5mn")
+[node name="Bottom" type="Sprite2D" parent="." unique_id=1441869970]
+texture = ExtResource("1_64uvh")
+
+[node name="Top" type="Sprite2D" parent="." unique_id=1963908949]
+texture = ExtResource("2_i4wwf")
+offset = Vector2(-45, 0)
+
+[node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=1107230644]
+shape = SubResource("RectangleShape2D_i4wwf")
+
+[node name="Detection" type="Area2D" parent="." unique_id=773229555]
+
+[node name="Area" type="CollisionShape2D" parent="Detection" unique_id=1622063561]
+shape = SubResource("CircleShape2D_i4wwf")
+
+[node name="Timer" type="Timer" parent="." unique_id=227724392]
+
+[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
