@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://byqiotn23k8s3"]
+[gd_scene format=3 uid="uid://dccbcpv4myn3e"]
 
 [ext_resource type="FontFile" uid="uid://dbg3mrrb1payx" path="res://Assets/BoldPixels/boldpixels.ttf" id="1_gun8v"]
 [ext_resource type="Script" uid="uid://d2khgtnptjyju" path="res://Scripts/TimeMenu.gd" id="1_x4r2h"]

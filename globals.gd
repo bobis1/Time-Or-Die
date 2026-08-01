@@ -1,4 +1,4 @@
 extends Node
 
 
-var currentLevel: String = "Present"
+var currentTime: String = "Present"

@@ -5,9 +5,15 @@
 [ext_resource type="PackedScene" uid="uid://ol04e8bm2ii4" path="res://Prefabs/player.tscn" id="2_hdxfg"]
 [ext_resource type="Script" uid="uid://cqku2yuuualcs" path="res://Scripts/Player/KillingGround.gd" id="3_5ylp3"]
 [ext_resource type="Texture2D" uid="uid://bswnunqsbreuc" path="res://Assets/Floor2.png" id="3_ufadg"]
+[ext_resource type="PackedScene" uid="uid://dccbcpv4myn3e" path="res://Scenes/TimeMenu.tscn" id="6_ufadg"]
+[ext_resource type="Shader" path="res://grayscale.gdshader" id="7_6dhpk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svm2c"]
 size = Vector2(186.6471, 24)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ufadg"]
+shader = ExtResource("7_6dhpk")
+shader_parameter/intensity = 1.0
 
 [node name="Node2D" type="Node2D" unique_id=1095521290]
 position = Vector2(-1497, -106)
@@ -78,5 +84,21 @@ position = Vector2(477, -111)
 
 [node name="Node2D2" type="Node2D" parent="." unique_id=1436688648]
 position = Vector2(-323, -111)
+
+[node name="TimeMenu" parent="." unique_id=390901523 node_paths=PackedStringArray("PastColorRect") instance=ExtResource("6_ufadg")]
+PastColorRect = NodePath("../CanvasLayer")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1546883653]
+layer = 20000
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=344316491]
+material = SubResource("ShaderMaterial_ufadg")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(25.943903, 13.041649)
 
 [connection signal="body_entered" from="KillingGround" to="KillingGround" method="_on_body_entered"]
