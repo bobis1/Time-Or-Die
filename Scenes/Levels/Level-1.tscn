@@ -66,7 +66,6 @@ position = Vector2(269.5417, 104.666664)
 scale = Vector2(5.641664, -0.73287797)
 shape = SubResource("RectangleShape2D_t07gs")
 
-[node name="TimeMenu" parent="." unique_id=390901523 node_paths=PackedStringArray("PastColorRect") instance=ExtResource("2_8r5np")]
-PastColorRect = NodePath("")
+[node name="TimeMenu" parent="." unique_id=390901523 instance=ExtResource("2_8r5np")]
 
 [connection signal="body_entered" from="KillingGround" to="KillingGround" method="_on_body_entered"]

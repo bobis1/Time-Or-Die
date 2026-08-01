@@ -1,8 +1,6 @@
 extends CanvasLayer
 
-var LevelNode: Node2D 
-
-@export var PastColorRect: CanvasLayer
+var LevelNode: Node2D
 
 func _ready():
 	LevelNode = get_owner()
@@ -19,20 +17,20 @@ func _on_past_pressed():
 	if LevelNode.is_in_group("TimeChangeScene"):
 		get_tree().paused = false
 		loadingScreen(Color(1, 1, 1))
-		PastColorRect.show()
+		$Grayscale.show()
 	else:
 		get_tree().paused = false
-		PastColorRect.hide()
+		$Grayscale.hide()
 		$TimePanel.hide()
 
 func _on_present_pressed():
 	if LevelNode.is_in_group("TimeChangeScene"):
 		get_tree().paused = false
 		loadingScreen(Color(1, 1, 1))
-		PastColorRect.hide()
+		$Grayscale.hide()
 	else:
 		get_tree().paused = false
-		PastColorRect.hide()
+		$Grayscale.hide()
 		$TimePanel.hide()
 
 func _on_future_pressed():
