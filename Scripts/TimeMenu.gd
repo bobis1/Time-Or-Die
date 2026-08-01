@@ -6,6 +6,7 @@ var LevelNode: Node2D
 
 func _ready():
 	LevelNode = get_owner()
+	$Grayscale.hide()
 	$TimePanel.hide()
 	$"Loading Panel".hide()
 
@@ -17,25 +18,31 @@ func _unhandled_input(event: InputEvent):
 func _on_past_pressed():
 	if LevelNode.is_in_group("TimeChangeScene"):
 		get_tree().paused = false
-		loadingScreen(Color(1, 0, 0))
+		loadingScreen(Color(1, 1, 1))
+		$Grayscale.show()
 	else:
 		get_tree().paused = false
+		$Grayscale.hide()
 		$TimePanel.hide()
 
 func _on_present_pressed():
 	if LevelNode.is_in_group("TimeChangeScene"):
 		get_tree().paused = false
 		loadingScreen(Color(1, 1, 1))
+		$Grayscale.hide()
 	else:
 		get_tree().paused = false
+		$Grayscale.hide()
 		$TimePanel.hide()
 
 func _on_future_pressed():
 	if LevelNode.is_in_group("TimeChangeScene"):
 		get_tree().paused = false
-		loadingScreen(Color(0, 0.2, 0.6))
+		$Grayscale.hide()
+		loadingScreen(Color(0.4, 0.4, 0.4))
 	else:
 		get_tree().paused = false
+		$Grayscale.hide()
 		$TimePanel.hide()
 
 func loadingScreen(color: Color):

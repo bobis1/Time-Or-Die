@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dykbsk20jkt3d"]
+
+[ext_resource type="Texture2D" uid="uid://cfcd5eb8gl2qj" path="res://Assets/Floor.png" id="1_vsvp5"]
+[ext_resource type="Texture2D" uid="uid://bswnunqsbreuc" path="res://Assets/Floor2.png" id="2_8rbpu"]
+[ext_resource type="PackedScene" uid="uid://ol04e8bm2ii4" path="res://Prefabs/player.tscn" id="3_8rbpu"]
+[ext_resource type="PackedScene" uid="uid://b2xt2vcqevv3m" path="res://Scenes/Enemy.tscn" id="4_fuudy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fuudy"]
+size = Vector2(186.6471, 21.551386)
+
+[node name="Level" type="Node2D" unique_id=198669682]
+
+[node name="Parallax" type="ParallaxBackground" parent="." unique_id=924486836]
+
+[node name="Road" type="ParallaxLayer" parent="Parallax" unique_id=1403661385]
+motion_mirroring = Vector2(1052, 0)
+
+[node name="Static" type="Area2D" parent="Parallax/Road" unique_id=2067723791]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Parallax/Road/Static" unique_id=1962204315]
+position = Vector2(-14, 2.8972678)
+scale = Vector2(5.6416636, -0.73287797)
+shape = SubResource("RectangleShape2D_fuudy")
+
+[node name="Road-1" type="TextureRect" parent="Parallax/Road/Static" unique_id=1994619926]
+offset_left = -539.0
+offset_top = -5.0
+offset_right = -13.0
+offset_bottom = 110.0
+texture = ExtResource("1_vsvp5")
+
+[node name="Road-2" type="TextureRect" parent="Parallax/Road/Static" unique_id=1250366871]
+offset_left = -13.0
+offset_top = -5.0
+offset_right = 513.0
+offset_bottom = 110.0
+texture = ExtResource("2_8rbpu")
+
+[node name="Player" parent="." unique_id=360186703 instance=ExtResource("3_8rbpu")]
+position = Vector2(1, -258)
+SPEED = 600.0
+JUMP_VELOCITY = -800.0
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1745568684]
+position = Vector2(61, 64)
+
+[node name="Enemies" type="Node2D" parent="." unique_id=136948077]
+
+[node name="Enemy" parent="Enemies" unique_id=921378029 instance=ExtResource("4_fuudy")]
+position = Vector2(1037, -60)
