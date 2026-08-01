@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://cqku2yuuualcs" path="res://Scripts/Player/KillingGround.gd" id="3_5ylp3"]
 [ext_resource type="Texture2D" uid="uid://bswnunqsbreuc" path="res://Assets/Floor2.png" id="3_ufadg"]
 [ext_resource type="PackedScene" uid="uid://dccbcpv4myn3e" path="res://Scenes/TimeMenu.tscn" id="6_ufadg"]
-[ext_resource type="Shader" path="res://grayscale.gdshader" id="7_6dhpk"]
+[ext_resource type="Shader" uid="uid://choo073i5t2p6" path="res://grayscale.gdshader" id="7_6dhpk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svm2c"]
 size = Vector2(186.6471, 24)

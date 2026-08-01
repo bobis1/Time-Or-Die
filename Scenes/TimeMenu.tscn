@@ -3,6 +3,11 @@
 [ext_resource type="FontFile" uid="uid://dbg3mrrb1payx" path="res://Assets/BoldPixels/boldpixels.ttf" id="1_gun8v"]
 [ext_resource type="Script" uid="uid://d2khgtnptjyju" path="res://Scripts/TimeMenu.gd" id="1_x4r2h"]
 [ext_resource type="Texture2D" uid="uid://crhsrp4u5kp8" path="res://Assets/Pixel UI Pack/03.png" id="3_q24dy"]
+[ext_resource type="Shader" uid="uid://choo073i5t2p6" path="res://grayscale.gdshader" id="4_t6tg6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u1qnv"]
+shader = ExtResource("4_t6tg6")
+shader_parameter/intensity = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q24dy"]
 atlas = ExtResource("3_q24dy")
@@ -50,6 +55,14 @@ animations = [{
 [node name="TimeMenu" type="CanvasLayer" unique_id=390901523]
 process_mode = 3
 script = ExtResource("1_x4r2h")
+
+[node name="Grayscale" type="ColorRect" parent="." unique_id=1012520775]
+material = SubResource("ShaderMaterial_u1qnv")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TimePanel" type="Panel" parent="." unique_id=531245936]
 visible = false
