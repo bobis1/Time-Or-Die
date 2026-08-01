@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://bvvg1vgf6770l"]
+
+[ext_resource type="PackedScene" uid="uid://ol04e8bm2ii4" path="res://Prefabs/player.tscn" id="2_qc7h3"]
+[ext_resource type="Script" uid="uid://bp71p318uoxi" path="res://Scripts/Killzone.gd" id="3_hd8dw"]
+[ext_resource type="PackedScene" uid="uid://dray08srhtogo" path="res://Scenes/FamilyHeriloom.tscn" id="4_uw5yq"]
+[ext_resource type="PackedScene" uid="uid://dccbcpv4myn3e" path="res://Scenes/TimeMenu.tscn" id="5_15xcw"]
+[ext_resource type="Texture2D" uid="uid://cfcd5eb8gl2qj" path="res://Assets/Floor.png" id="5_qc7h3"]
+[ext_resource type="PackedScene" path="res://Scenes/HUD.tscn" id="6_57mv2"]
+[ext_resource type="Texture2D" uid="uid://bswnunqsbreuc" path="res://Assets/Floor2.png" id="6_hd8dw"]
+[ext_resource type="PackedScene" uid="uid://dy0vwjgltm1aw" path="res://Scenes/Dynamic.tscn" id="7_67hmw"]
+[ext_resource type="AudioStream" uid="uid://63r0xfa1b0ot" path="res://Assets/Music/reganati-run-for-your-life-428712.mp3" id="9_k44ty"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uevwl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uw5yq"]
+size = Vector2(186.6471, 24)
+
+[node name="Level" type="Node2D" unique_id=697117047 groups=["TimeChangeScene"]]
+
+[node name="Player" parent="." unique_id=360186703 instance=ExtResource("2_qc7h3")]
+position = Vector2(537, 52)
+SPEED = 600.0
+JUMP_VELOCITY = -800.0
+
+[node name="Camera" type="Camera2D" parent="Player" unique_id=416328624]
+position = Vector2(61, 64)
+limit_left = -3600
+limit_bottom = 1400
+
+[node name="Killzone" type="Area2D" parent="." unique_id=1075720790]
+position = Vector2(0, 1400)
+script = ExtResource("3_hd8dw")
+
+[node name="Boundary" type="CollisionShape2D" parent="Killzone" unique_id=480383650]
+shape = SubResource("WorldBoundaryShape2D_uevwl")
+
+[node name="FamilyHeriloom" parent="." unique_id=563021778 instance=ExtResource("4_uw5yq")]
+position = Vector2(1045, -949)
+scale = Vector2(7, 7)
+
+[node name="TimeMenu" parent="." unique_id=390901523 instance=ExtResource("5_15xcw")]
+
+[node name="HUD" parent="." unique_id=398721829 instance=ExtResource("6_57mv2")]
+
+[node name="Dynamic2" parent="." unique_id=332081776 instance=ExtResource("7_67hmw")]
+position = Vector2(438.00003, -6619)
+scale = Vector2(7, 7)
+
+[node name="Dynamic6" parent="." unique_id=372640661 instance=ExtResource("7_67hmw")]
+position = Vector2(19077, -4628)
+scale = Vector2(7, 7)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=551982192]
+stream = ExtResource("9_k44ty")
+autoplay = true
+
+[node name="floor" type="StaticBody2D" parent="." unique_id=1430408616]
+position = Vector2(650, 183)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=2001622122]
+position = Vector2(-14, 2)
+scale = Vector2(5.6416636, -0.73287797)
+shape = SubResource("RectangleShape2D_uw5yq")
+
+[node name="TextureRect" type="TextureRect" parent="floor" unique_id=1613993375]
+offset_left = -539.0
+offset_top = -5.0
+offset_right = -13.0
+offset_bottom = 110.0
+texture = ExtResource("5_qc7h3")
+
+[node name="TextureRect2" type="TextureRect" parent="floor" unique_id=1322409958]
+offset_left = -13.0
+offset_top = -4.0
+offset_right = 513.0
+offset_bottom = 111.0
+texture = ExtResource("6_hd8dw")
+
+[connection signal="body_entered" from="Killzone" to="Killzone" method="_on_body_entered"]

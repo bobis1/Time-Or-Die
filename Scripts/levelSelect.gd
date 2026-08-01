@@ -16,5 +16,8 @@ func _on3__pressed() -> void:
 
 
 func _on_bounus_pressed() -> void:
-
+	get_tree().change_scene_to_file("res://Scenes/Levels/bounus.tscn")
+	pass
+func _on_silly_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Levels/silly.tscn")
 	pass

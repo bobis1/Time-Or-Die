@@ -6,7 +6,7 @@ var canShoot: bool = true
 func _process(delta: float):
 	if Target != null:
 		var directionAngle = global_position.angle_to_point(Target.global_position) + PI
-		$Top.rotation = lerp_angle($Top.rotation, directionAngle, 1.0)
+		$Top.rotation = lerp_angle($Top.rotation, directionAngle, 1.5)
 		Shoot()
 
 func Shoot():

@@ -90,10 +90,10 @@ theme_override_font_sizes/font_size = 32
 text = "Past"
 
 [node name="Label8" type="Label" parent="Labels" unique_id=565489346]
-offset_left = 1241.25
-offset_top = -119.0
-offset_right = 2007.25
-offset_bottom = -60.0
+offset_left = 1191.25
+offset_top = -114.5
+offset_right = 1957.25
+offset_bottom = -55.5
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_5iyjr")
 theme_override_font_sizes/font_size = 32
@@ -118,6 +118,11 @@ TimeActivated = "Past"
 
 [node name="DynamicScene2" parent="Dynamic Islands" unique_id=1292840584 instance=ExtResource("3_wcaum")]
 position = Vector2(1273.25, -44.500008)
+scale = Vector2(0.15, 0.15)
+TimeActivated = "Present"
+
+[node name="DynamicScene4" parent="Dynamic Islands" unique_id=1780655484 instance=ExtResource("3_wcaum")]
+position = Vector2(1169, -58.5)
 scale = Vector2(0.15, 0.15)
 TimeActivated = "Present"
 

@@ -3,7 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://cam8bd0wd1pyu" path="res://Assets/missile.png" id="1_4vug3"]
 [ext_resource type="Script" uid="uid://cmdd8rsyy61bb" path="res://Scripts/missle.gd" id="1_bq2cw"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pfwte"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bq2cw"]
+size = Vector2(166.5, 165.5)
 
 [node name="Missle" type="RigidBody2D" unique_id=2090227441]
 contact_monitor = true
@@ -11,15 +12,17 @@ max_contacts_reported = 1
 script = ExtResource("1_bq2cw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=79774140]
-shape = SubResource("CapsuleShape2D_pfwte")
+position = Vector2(149, -143)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_bq2cw")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=555959051]
-offset_left = -21.0
+offset_left = -20.999985
 offset_top = 22.0
-offset_right = 149.0
+offset_right = 149.00002
 offset_bottom = 194.0
 rotation = -1.5707964
-scale = Vector2(0.25, 0.25)
+scale = Vector2(2, 2)
 texture = ExtResource("1_4vug3")
 
 [node name="Timer" type="Timer" parent="." unique_id=788334080]

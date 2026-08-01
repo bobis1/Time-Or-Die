@@ -69,29 +69,44 @@ scale = Vector2(7, 7)
 [node name="DynamicScene" parent="." unique_id=1124495465 instance=ExtResource("8_tqeg5")]
 position = Vector2(5021, 497)
 scale = Vector2(4, 4)
+TimeActivated = "Present"
 
 [node name="DynamicScene2" parent="." unique_id=935622317 instance=ExtResource("8_tqeg5")]
 position = Vector2(15803, 142)
 scale = Vector2(2, 2)
+TimeActivated = "Present"
 
 [node name="DynamicScene3" parent="." unique_id=804448549 instance=ExtResource("8_tqeg5")]
 position = Vector2(16680, -312)
 scale = Vector2(2, 2)
+TimeActivated = "President"
 
 [node name="DynamicScene4" parent="." unique_id=834705918 instance=ExtResource("8_tqeg5")]
 position = Vector2(17397, -669)
 scale = Vector2(2, 2)
+TimeActivated = "Future"
 
 [node name="DynamicScene5" parent="." unique_id=1538010666 instance=ExtResource("8_tqeg5")]
 position = Vector2(18134, -1099)
 scale = Vector2(2, 2)
+TimeActivated = "Future"
+
+[node name="DynamicScene7" parent="." unique_id=1307578175 instance=ExtResource("8_tqeg5")]
+position = Vector2(5972, -135)
+scale = Vector2(2, 2)
+TimeActivated = "Future"
 
 [node name="DynamicScene6" parent="." unique_id=1078509142 instance=ExtResource("8_tqeg5")]
 position = Vector2(18629, -1741)
 scale = Vector2(2, 2)
+TimeActivated = "Futurex"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=551982192]
 stream = ExtResource("9_am62g")
 autoplay = true
+
+[node name="FamilyHeriloom2" parent="." unique_id=467224097 instance=ExtResource("1_kca5f")]
+position = Vector2(20760, -2409)
+scale = Vector2(9, 9)
 
 [connection signal="body_entered" from="Killzone" to="Killzone" method="_on_body_entered"]

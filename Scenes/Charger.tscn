@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://mbaxn66e1ajx"]
 
-[ext_resource type="Script" path="res://Scripts/charger.gd" id="1_iabbt"]
+[ext_resource type="Script" uid="uid://oph3s32emdm6" path="res://Scripts/charger.gd" id="1_iabbt"]
 [ext_resource type="Texture2D" uid="uid://cnk0ac72nqftg" path="res://Assets/Cruirasuir.png" id="1_rwgi7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjgtw"]
-size = Vector2(122, 128)
+[sub_resource type="CircleShape2D" id="CircleShape2D_iabbt"]
+radius = 107.74
 
 [node name="Charger" type="RigidBody2D" unique_id=1987823572]
+contact_monitor = true
+max_contacts_reported = 2
 script = ExtResource("1_iabbt")
 
 [node name="Timer" type="Timer" parent="." unique_id=2010568935]
@@ -16,8 +18,8 @@ wait_time = 3.0
 wait_time = 0.25
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=730659954]
-position = Vector2(-43, 0)
-shape = SubResource("RectangleShape2D_qjgtw")
+position = Vector2(-28, 2)
+shape = SubResource("CircleShape2D_iabbt")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1537396856]
 offset_left = -100.0
