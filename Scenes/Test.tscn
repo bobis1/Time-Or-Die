@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://df8bpf36wo2el"]
 
 [ext_resource type="Texture2D" uid="uid://c7k2a76raeh7c" path="res://icon.svg" id="1_ko2s7"]
-[ext_resource type="PackedScene" uid="uid://byqiotn23k8s3" path="res://Scenes/TimeMenu.tscn" id="2_gxb1y"]
+[ext_resource type="PackedScene" uid="uid://dccbcpv4myn3e" path="res://Scenes/TimeMenu.tscn" id="2_gxb1y"]
 
 [node name="Node2D" type="Node2D" unique_id=558079762 groups=["TimeChangeScene"]]
 
