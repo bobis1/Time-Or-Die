@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c2lyfu0oru05r"]
+
+[ext_resource type="Script" uid="uid://3m63da0kn36c" path="res://Scripts/Bullet.gd" id="1_vlxeq"]
+
+[node name="Bullet" type="Area2D" unique_id=1186623106]
+script = ExtResource("1_vlxeq")
+
+[node name="Texture" type="ColorRect" parent="." unique_id=382060748]
+offset_right = 100.0
+offset_bottom = 10.0
+
+[node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=8692936]
