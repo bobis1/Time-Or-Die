@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bye83066jojup" path="res://Assets/Tilemap.png" id="1_8jrmh"]
 [ext_resource type="PackedScene" uid="uid://dcw8ugjvlgn35" path="res://Scenes/DynamicScene.tscn" id="2_xqwvq"]
+[ext_resource type="PackedScene" uid="uid://dy0vwjgltm1aw" path="res://Scenes/Dynamic.tscn" id="3_g3khv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
 texture = ExtResource("1_8jrmh")
@@ -149,3 +150,6 @@ offset_top = -749.0
 offset_right = 3926.0
 offset_bottom = -726.0
 text = "Future"
+
+[node name="Dynamic" parent="." unique_id=1242925952 instance=ExtResource("3_g3khv")]
+position = Vector2(775, -28)

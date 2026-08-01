@@ -13,6 +13,7 @@ config_version=5
 config/name="Rewind"
 run/main_scene="uid://du2n20ky2q6nk"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/bg_color=Color(0.38234815, 0.6449025, 0.7966069, 1)
 config/icon="res://icon.svg"
 
 [autoload]
@@ -75,3 +76,4 @@ Right={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0.45016408, 0.7046929, 0.8036835, 1)

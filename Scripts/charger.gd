@@ -1,11 +1,12 @@
 extends RigidBody2D
 
-@export var player: Node2D
+var player: Node2D
 @export var chase_force: float = 800.0
 
 
 func _ready() -> void:
 	get_child(0).start()
+	player = get_tree().get_first_node_in_group("Player")
 
 func _physics_process(delta: float) -> void:
 	if is_instance_valid(player):
