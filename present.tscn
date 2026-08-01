@@ -7,11 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bswnunqsbreuc" path="res://Assets/Floor2.png" id="3_ufadg"]
 [ext_resource type="PackedScene" uid="uid://dccbcpv4myn3e" path="res://Scenes/TimeMenu.tscn" id="6_ufadg"]
 [ext_resource type="Shader" uid="uid://choo073i5t2p6" path="res://grayscale.gdshader" id="7_6dhpk"]
-<<<<<<< HEAD
-=======
 [ext_resource type="Texture2D" uid="uid://ce30poorcrmtx" path="res://Assets/heart.png" id="8_wbeh7"]
 [ext_resource type="PackedScene" uid="uid://dray08srhtogo" path="res://Scenes/FamilyHeriloom.tscn" id="9_u4ipx"]
->>>>>>> 4e09ef3e3b30e4ad77e625eb69cf803c1c29444c
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svm2c"]
 size = Vector2(186.6471, 24)
