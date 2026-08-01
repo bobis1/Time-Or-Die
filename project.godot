@@ -15,15 +15,13 @@ run/main_scene="uid://btfmbthvinx70"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
-<<<<<<< Updated upstream
-[global_group]
-
-TimeChangeScene=""
-=======
 [autoload]
 
 Globals="*uid://bn18w7mpcyq4n"
->>>>>>> Stashed changes
+
+[global_group]
+
+TimeChangeScene=""
 
 [input]
 
