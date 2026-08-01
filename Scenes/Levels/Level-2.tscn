@@ -3,11 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://dray08srhtogo" path="res://Scenes/FamilyHeriloom.tscn" id="1_bomoa"]
 [ext_resource type="Script" uid="uid://bp71p318uoxi" path="res://Scripts/Killzone.gd" id="2_aowoj"]
 [ext_resource type="PackedScene" uid="uid://ol04e8bm2ii4" path="res://Prefabs/player.tscn" id="3_vs31q"]
-[ext_resource type="PackedScene" uid="uid://lxcapyreqm2x" path="res://Scenes/HUD.tscn" id="5_io0hp"]
+[ext_resource type="PackedScene" path="res://Scenes/HUD.tscn" id="5_io0hp"]
 [ext_resource type="PackedScene" uid="uid://c2pvehkw3o050" path="res://Scenes/TileMap/Level-2.tscn" id="7_bomoa"]
 [ext_resource type="PackedScene" uid="uid://bm7wv4krbn0kl" path="res://Scenes/Turret.tscn" id="7_wgrye"]
 [ext_resource type="PackedScene" uid="uid://dccbcpv4myn3e" path="res://Scenes/TimeMenu.tscn" id="7_yqxct"]
 [ext_resource type="PackedScene" uid="uid://mbaxn66e1ajx" path="res://Scenes/Charger.tscn" id="8_wgrye"]
+[ext_resource type="PackedScene" uid="uid://dy0vwjgltm1aw" path="res://Scenes/Dynamic.tscn" id="9_vs31q"]
+[ext_resource type="FontFile" uid="uid://b7weglo7fwrs1" path="res://Assets/BoldPixels/BoldPixels.otf" id="10_83jt6"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_io0hp"]
 
@@ -33,7 +35,8 @@ script = ExtResource("2_aowoj")
 shape = SubResource("WorldBoundaryShape2D_io0hp")
 
 [node name="FamilyHeriloom" parent="." unique_id=563021778 instance=ExtResource("1_bomoa")]
-position = Vector2(3687, -1838)
+position = Vector2(17098.002, 81)
+scale = Vector2(7, 7)
 
 [node name="TimeMenu" parent="." unique_id=390901523 instance=ExtResource("7_yqxct")]
 
@@ -46,5 +49,44 @@ position = Vector2(1563, -333)
 
 [node name="Charger" parent="Turret" unique_id=1987823572 instance=ExtResource("8_wgrye")]
 position = Vector2(-688, -236)
+
+[node name="Dynamic" parent="." unique_id=1242925952 instance=ExtResource("9_vs31q")]
+position = Vector2(452, -318)
+
+[node name="Dynamic" parent="Dynamic" unique_id=1683001550 instance=ExtResource("9_vs31q")]
+position = Vector2(7039.455, -450.32593)
+
+[node name="Dynamic" parent="Dynamic/Dynamic" unique_id=1541751487 instance=ExtResource("9_vs31q")]
+position = Vector2(-1139.7944, -95.94214)
+
+[node name="Dynamic" parent="Dynamic/Dynamic/Dynamic" unique_id=518979505 instance=ExtResource("9_vs31q")]
+position = Vector2(2521.3628, -23.026123)
+
+[node name="Dynamic" parent="Dynamic/Dynamic/Dynamic/Dynamic" unique_id=1412026063 instance=ExtResource("9_vs31q")]
+position = Vector2(2058.5488, 196.48999)
+
+[node name="Dynamic" parent="Dynamic/Dynamic/Dynamic/Dynamic/Dynamic" unique_id=1277151432 instance=ExtResource("9_vs31q")]
+position = Vector2(1654.0449, -464.36072)
+
+[node name="Dynamic2" parent="." unique_id=54347845 instance=ExtResource("9_vs31q")]
+position = Vector2(13, -315)
+
+[node name="Label" type="Label" parent="." unique_id=1061247049]
+offset_left = 855.0
+offset_top = 22.0
+offset_right = 911.0
+offset_bottom = 45.0
+scale = Vector2(6, 6)
+theme_override_fonts/font = ExtResource("10_83jt6")
+text = "RUN AWAY!"
+
+[node name="Label2" type="Label" parent="." unique_id=1479955808]
+offset_left = 11338.0
+offset_top = 41.0
+offset_right = 11627.0
+offset_bottom = 64.0
+scale = Vector2(6, 6)
+theme_override_fonts/font = ExtResource("10_83jt6")
+text = "TIP: Changing your time changes the enemies you fight"
 
 [connection signal="body_entered" from="Killzone" to="Killzone" method="_on_body_entered"]

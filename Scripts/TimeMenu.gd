@@ -50,7 +50,7 @@ func loadingScreen(color: Color):
 	$TimePanel.hide()
 	$"Loading Panel".show()
 	$"Loading Panel/Control/Animation".play("Default")
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.15).timeout
 	$"Loading Panel/Control/Animation".stop()
 	$"Loading Panel".hide()
 	LevelNode.modulate = color

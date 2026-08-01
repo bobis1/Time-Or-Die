@@ -3,8 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://dray08srhtogo" path="res://Scenes/FamilyHeriloom.tscn" id="1_kca5f"]
 [ext_resource type="PackedScene" uid="uid://ol04e8bm2ii4" path="res://Prefabs/player.tscn" id="2_tqeg5"]
 [ext_resource type="Script" uid="uid://bp71p318uoxi" path="res://Scripts/Killzone.gd" id="3_3p4p7"]
+[ext_resource type="PackedScene" uid="uid://dy0vwjgltm1aw" path="res://Scenes/Dynamic.tscn" id="5_kca5f"]
 [ext_resource type="PackedScene" uid="uid://dccbcpv4myn3e" path="res://Scenes/TimeMenu.tscn" id="6_r725w"]
+[ext_resource type="PackedScene" path="res://Scenes/HUD.tscn" id="6_uevwl"]
 [ext_resource type="PackedScene" uid="uid://duoxu2spje7pd" path="res://Scenes/TileMap/Level-3.tscn" id="7_kca5f"]
+[ext_resource type="PackedScene" uid="uid://dcw8ugjvlgn35" path="res://Scenes/DynamicScene.tscn" id="8_tqeg5"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uevwl"]
 
@@ -31,9 +34,59 @@ script = ExtResource("3_3p4p7")
 shape = SubResource("WorldBoundaryShape2D_uevwl")
 
 [node name="FamilyHeriloom" parent="." unique_id=563021778 instance=ExtResource("1_kca5f")]
-position = Vector2(3687, -1838)
-scale = Vector2(6, 6)
+position = Vector2(13023, -537)
+scale = Vector2(7, 7)
 
 [node name="TimeMenu" parent="." unique_id=390901523 instance=ExtResource("6_r725w")]
+
+[node name="HUD" parent="." unique_id=398721829 instance=ExtResource("6_uevwl")]
+
+[node name="Dynamic" parent="." unique_id=1242925952 instance=ExtResource("5_kca5f")]
+position = Vector2(-1107.001, -340.99997)
+scale = Vector2(7, 7)
+
+[node name="Dynamic2" parent="." unique_id=332081776 instance=ExtResource("5_kca5f")]
+position = Vector2(3206.9995, -2003.9999)
+scale = Vector2(7, 7)
+
+[node name="Dynamic3" parent="." unique_id=2084069805 instance=ExtResource("5_kca5f")]
+position = Vector2(9082, -4045)
+scale = Vector2(7, 7)
+
+[node name="Dynamic4" parent="." unique_id=1303533930 instance=ExtResource("5_kca5f")]
+position = Vector2(11798, -3990)
+scale = Vector2(7, 7)
+
+[node name="Dynamic5" parent="." unique_id=2091486416 instance=ExtResource("5_kca5f")]
+position = Vector2(14375, -3315.9998)
+scale = Vector2(7, 7)
+
+[node name="Dynamic6" parent="." unique_id=372640661 instance=ExtResource("5_kca5f")]
+position = Vector2(19077, -4628)
+scale = Vector2(7, 7)
+
+[node name="DynamicScene" parent="." unique_id=1124495465 instance=ExtResource("8_tqeg5")]
+position = Vector2(5021, 497)
+scale = Vector2(4, 4)
+
+[node name="DynamicScene2" parent="." unique_id=935622317 instance=ExtResource("8_tqeg5")]
+position = Vector2(15803, 142)
+scale = Vector2(2, 2)
+
+[node name="DynamicScene3" parent="." unique_id=804448549 instance=ExtResource("8_tqeg5")]
+position = Vector2(16680, -312)
+scale = Vector2(2, 2)
+
+[node name="DynamicScene4" parent="." unique_id=834705918 instance=ExtResource("8_tqeg5")]
+position = Vector2(17397, -669)
+scale = Vector2(2, 2)
+
+[node name="DynamicScene5" parent="." unique_id=1538010666 instance=ExtResource("8_tqeg5")]
+position = Vector2(18134, -1099)
+scale = Vector2(2, 2)
+
+[node name="DynamicScene6" parent="." unique_id=1078509142 instance=ExtResource("8_tqeg5")]
+position = Vector2(18629, -1741)
+scale = Vector2(2, 2)
 
 [connection signal="body_entered" from="Killzone" to="Killzone" method="_on_body_entered"]
