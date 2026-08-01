@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" path="res://Scenes/HUD.tscn" id="6_uevwl"]
 [ext_resource type="PackedScene" uid="uid://duoxu2spje7pd" path="res://Scenes/TileMap/Level-3.tscn" id="7_kca5f"]
 [ext_resource type="PackedScene" uid="uid://dcw8ugjvlgn35" path="res://Scenes/DynamicScene.tscn" id="8_tqeg5"]
+[ext_resource type="AudioStream" uid="uid://63r0xfa1b0ot" path="res://Assets/Music/reganati-run-for-your-life-428712.mp3" id="9_am62g"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uevwl"]
 
@@ -88,5 +89,9 @@ scale = Vector2(2, 2)
 [node name="DynamicScene6" parent="." unique_id=1078509142 instance=ExtResource("8_tqeg5")]
 position = Vector2(18629, -1741)
 scale = Vector2(2, 2)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=551982192]
+stream = ExtResource("9_am62g")
+autoplay = true
 
 [connection signal="body_entered" from="Killzone" to="Killzone" method="_on_body_entered"]
