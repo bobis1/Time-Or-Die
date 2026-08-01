@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-@export var SPEED = 300.0
-@export var JUMP_VELOCITY = -400.0
+@export var SPEED = 500.0
+@export var JUMP_VELOCITY = -700.0
 @export var sprite: Sprite2D
 var isLeft: bool
 #@export var shadow: PackedScene

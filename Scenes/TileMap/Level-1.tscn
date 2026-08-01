@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b45ofa1wxcqi2"]
 
-[ext_resource type="Texture2D" uid="uid://bye83066jojup" path="res://Assets/Tilemap.png" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://bye83066jojup" path="res://Assets/Tilemap.png" id="1_dt64v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
-texture = ExtResource("1_ig7tw")
+texture = ExtResource("1_dt64v")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31, -31, 31, -31, 31, 31, -31, 31)

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://biuu802fd6sva"]
+
+[ext_resource type="PackedScene" uid="uid://ol04e8bm2ii4" path="res://Prefabs/player.tscn" id="1_3gigh"]
+[ext_resource type="PackedScene" uid="uid://b45ofa1wxcqi2" path="res://Scenes/TileMap/Level-1.tscn" id="2_6u60d"]
+
+[node name="Level" type="Node2D" unique_id=697117047]
+
+[node name="Player" parent="." unique_id=360186703 instance=ExtResource("1_3gigh")]
+
+[node name="Camera" type="Camera2D" parent="Player" unique_id=737693294]
+
+[node name="TileMap" parent="." unique_id=882838685 instance=ExtResource("2_6u60d")]
