@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 var player: Node2D
-@export var chase_force: float = 800.0
+@export var chase_force: float = 10.0
 
 
 func _ready() -> void:
@@ -17,12 +17,12 @@ func _physics_process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	get_child(0).get_child(0).start()
-	chase_force = 1600
+	chase_force *= 2
 	pass
 
 
 func _on_timer_2_timeout() -> void:
-	chase_force = 800
+	chase_force = 10
 	get_child(0).start()
 	pass
 
@@ -32,4 +32,5 @@ func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("Player"):
 		Globals.lives -= 1
 		queue_free()
+		print("Crashed")
 	pass

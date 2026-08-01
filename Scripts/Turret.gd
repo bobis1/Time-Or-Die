@@ -1,12 +1,12 @@
 extends StaticBody2D
 
 var Target: Node2D = null
-var canShoot: bool = false
+var canShoot: bool = true
 
 func _process(delta: float):
 	if Target != null:
 		var directionAngle = global_position.angle_to_point(Target.global_position) + PI
-		$Top.rotation = lerp_angle(rotation, directionAngle, 1)
+		$Top.rotation = lerp_angle($Top.rotation, directionAngle, 1.0)
 		Shoot()
 
 func Shoot():
