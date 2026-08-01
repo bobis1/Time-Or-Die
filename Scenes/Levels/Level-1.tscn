@@ -2,11 +2,91 @@
 
 [ext_resource type="PackedScene" uid="uid://ol04e8bm2ii4" path="res://Prefabs/player.tscn" id="1_3gigh"]
 [ext_resource type="PackedScene" uid="uid://b45ofa1wxcqi2" path="res://Scenes/TileMap/Level-1.tscn" id="2_6u60d"]
+[ext_resource type="Script" uid="uid://b7f6l3uaqqwgb" path="res://lives.gd" id="3_d01u6"]
+[ext_resource type="Texture2D" uid="uid://ce30poorcrmtx" path="res://Assets/heart.png" id="4_5hdhp"]
+[ext_resource type="PackedScene" uid="uid://dray08srhtogo" path="res://Scenes/FamilyHeriloom.tscn" id="5_5hdhp"]
+[ext_resource type="Script" uid="uid://cqku2yuuualcs" path="res://Scripts/Player/KillingGround.gd" id="6_75qqu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t07gs"]
+size = Vector2(16.98671, 14.554489)
 
 [node name="Level" type="Node2D" unique_id=697117047]
 
-[node name="Player" parent="." unique_id=360186703 instance=ExtResource("1_3gigh")]
+[node name="Node2D" type="Node2D" parent="." unique_id=2110090072]
+position = Vector2(682, 199)
+scale = Vector2(6, 6)
 
-[node name="Camera" type="Camera2D" parent="Player" unique_id=737693294]
+[node name="Node2D2" type="Node2D" parent="." unique_id=1860005043]
+position = Vector2(1786, 199)
+scale = Vector2(6, 6)
 
 [node name="TileMap" parent="." unique_id=882838685 instance=ExtResource("2_6u60d")]
+
+[node name="Player" parent="." unique_id=360186703 instance=ExtResource("1_3gigh")]
+position = Vector2(485, -264)
+SPEED = 600.0
+JUMP_VELOCITY = -800.0
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=416328624]
+position = Vector2(61, 64)
+
+[node name="Lives" type="HBoxContainer" parent="Player" unique_id=1670042314]
+offset_left = 152.0
+offset_top = -241.0
+offset_right = 1075.0
+offset_bottom = 7.0
+scale = Vector2(0.5, 0.5)
+script = ExtResource("3_d01u6")
+
+[node name="TextureRect" type="TextureRect" parent="Player/Lives" unique_id=598868814]
+layout_mode = 2
+texture = ExtResource("4_5hdhp")
+
+[node name="TextureRect2" type="TextureRect" parent="Player/Lives" unique_id=355363204]
+layout_mode = 2
+texture = ExtResource("4_5hdhp")
+
+[node name="TextureRect3" type="TextureRect" parent="Player/Lives" unique_id=1488024478]
+layout_mode = 2
+texture = ExtResource("4_5hdhp")
+
+[node name="FamilyHeriloom" parent="Player" unique_id=563021778 instance=ExtResource("5_5hdhp")]
+position = Vector2(3120, 183)
+scale = Vector2(6, 6)
+
+[node name="KillingGround" type="Area2D" parent="." unique_id=1419283221 node_paths=PackedStringArray("lastSafeArea")]
+position = Vector2(45, 398)
+scale = Vector2(6, 6)
+script = ExtResource("6_75qqu")
+lastSafeArea = NodePath("../Node2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillingGround" unique_id=2128710516]
+position = Vector2(157.83334, 13.980614)
+scale = Vector2(5.641664, -0.73287797)
+shape = SubResource("RectangleShape2D_t07gs")
+
+[node name="KillingGround2" type="Area2D" parent="." unique_id=1691860657 node_paths=PackedStringArray("lastSafeArea")]
+position = Vector2(547, 397.00003)
+scale = Vector2(6, 6)
+script = ExtResource("6_75qqu")
+lastSafeArea = NodePath("../Node2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillingGround2" unique_id=1146647385]
+position = Vector2(157.83334, 13.980614)
+scale = Vector2(5.641664, -0.73287797)
+shape = SubResource("RectangleShape2D_t07gs")
+
+[node name="KillingGround4" type="Area2D" parent="." unique_id=2008960661 node_paths=PackedStringArray("lastSafeArea")]
+position = Vector2(1130, 489)
+scale = Vector2(6, 6)
+script = ExtResource("6_75qqu")
+lastSafeArea = NodePath("../Node2D2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillingGround4" unique_id=346527226]
+position = Vector2(179.25, -1.8333206)
+scale = Vector2(5.641664, -0.73287797)
+shape = SubResource("RectangleShape2D_t07gs")
+
+[connection signal="body_entered" from="KillingGround" to="KillingGround" method="_on_body_entered"]
+[connection signal="body_entered" from="KillingGround2" to="KillingGround2" method="_on_body_entered"]
+[connection signal="body_entered" from="KillingGround4" to="KillingGround4" method="_on_body_entered"]
