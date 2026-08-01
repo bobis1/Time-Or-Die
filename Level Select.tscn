@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bna41mpryejyu" path="res://Scripts/levelSelect.gd" id="1_1cuwq"]
 [ext_resource type="FontFile" uid="uid://dbg3mrrb1payx" path="res://Assets/BoldPixels/boldpixels.ttf" id="1_r4p04"]
+[ext_resource type="Texture2D" uid="uid://ccxkhoox5timg" path="res://Assets/SpeechBubble.png" id="2_wy1jr"]
 [ext_resource type="Texture2D" uid="uid://cccltio2dnudl" path="res://Assets/PlayerBody.png" id="3_30a6j"]
-[ext_resource type="Texture2D" uid="uid://dvlk2tmh7vk76" path="res://Assets/PlayerArms.png" id="4_gdvsk"]
+[ext_resource type="Texture2D" uid="uid://cug3thv2v84il" path="res://Assets/Untitled.png" id="4_gdvsk"]
+[ext_resource type="Script" uid="uid://ur3udf355630" path="res://Scripts/SpeechBubble.gd" id="6_1tn17"]
 
 [node name="LevelSelect" type="Node2D" unique_id=104113014]
 script = ExtResource("1_1cuwq")
@@ -48,9 +50,9 @@ text = "Bounus"
 [node name="PlayerRig" type="Control" parent="." unique_id=1564041237]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -766.0
+offset_left = -773.0
 offset_top = 3.0
-offset_right = -726.0
+offset_right = -733.0
 offset_bottom = 43.0
 
 [node name="TextureRect" type="TextureRect" parent="PlayerRig" unique_id=649282681]
@@ -81,7 +83,31 @@ rotation = -2.6892405
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("4_gdvsk")
 
+[node name="TextureRect4" type="TextureRect" parent="PlayerRig" unique_id=1696625975]
+layout_mode = 0
+offset_left = 946.0
+offset_top = 236.0
+offset_right = 1264.0
+offset_bottom = 438.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_wy1jr")
+
+[node name="Label" type="Label" parent="PlayerRig" unique_id=1771149988]
+layout_mode = 0
+offset_left = 977.0
+offset_top = 255.0
+offset_right = 1090.0
+offset_bottom = 278.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "PLACEHOLDER"
+script = ExtResource("6_1tn17")
+Phrases = Array[String](["How are you today?", "How nice!", "blahblah", "wehee", "bananas are great", "Vote for us", "Gelato", "Weheehee", "Not on steam", "crazy"])
+
+[node name="Timer" type="Timer" parent="PlayerRig/Label" unique_id=1474973396]
+wait_time = 5.0
+
 [connection signal="pressed" from="GridContainer/1" to="." method="_on1__pressed"]
 [connection signal="pressed" from="GridContainer/2" to="." method="_on2__pressed"]
 [connection signal="pressed" from="GridContainer/3" to="." method="_on3__pressed"]
 [connection signal="pressed" from="GridContainer/Bounus" to="." method="_on_bounus_pressed"]
+[connection signal="timeout" from="PlayerRig/Label/Timer" to="PlayerRig/Label" method="_on_timer_timeout"]

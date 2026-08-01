@@ -8,4 +8,4 @@ var currentTime: String = "Present":
         currentTime = value
         time_jumped.emit(currentTime)
 
-var lives: int = 4
+var lives: int = 3

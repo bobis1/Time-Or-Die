@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if Globals.lives < 3:
 		liveSprites[Globals.lives].hide()
 	if Globals.lives == 0:
