@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dcw8ugjvlgn35"]
+
+[ext_resource type="Texture2D" uid="uid://dc1jmej7xqnqc" path="res://Assets/Breakable.png" id="1_8ppmi"]
+[ext_resource type="Script" uid="uid://jmixftynru0s" path="res://Scripts/DynamicPlatform.gd" id="1_g1jru"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mk5m3"]
+size = Vector2(250, 248)
+
+[node name="DynamicScene" type="StaticBody2D" unique_id=1124495465]
+script = ExtResource("1_g1jru")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1165274626]
+position = Vector2(-4, 1)
+shape = SubResource("RectangleShape2D_mk5m3")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1903802691]
+offset_left = -129.0
+offset_top = -124.0
+offset_right = 371.0
+offset_bottom = 377.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_8ppmi")
