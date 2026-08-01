@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dy0vwjgltm1aw"]
 
-[node name="Dynamic" type="StaticBody2D" unique_id=432231022]
+[ext_resource type="Script" uid="uid://pqjwms0o272s" path="res://Scripts/dynamic.gd" id="1_v25rr"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1298473819]
+[node name="Dynamic" type="Node2D" unique_id=1242925952]
+script = ExtResource("1_v25rr")
