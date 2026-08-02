@@ -3,11 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://dray08srhtogo" path="res://Scenes/FamilyHeriloom.tscn" id="1_kca5f"]
 [ext_resource type="PackedScene" uid="uid://ol04e8bm2ii4" path="res://Prefabs/player.tscn" id="2_tqeg5"]
 [ext_resource type="Script" uid="uid://bp71p318uoxi" path="res://Scripts/Killzone.gd" id="3_3p4p7"]
-[ext_resource type="PackedScene" uid="uid://dy0vwjgltm1aw" path="res://Scenes/Dynamic.tscn" id="5_kca5f"]
+[ext_resource type="PackedScene" path="res://Scenes/Dynamic.tscn" id="5_kca5f"]
 [ext_resource type="PackedScene" uid="uid://dccbcpv4myn3e" path="res://Scenes/TimeMenu.tscn" id="6_r725w"]
-[ext_resource type="PackedScene" path="res://Scenes/HUD.tscn" id="6_uevwl"]
+[ext_resource type="PackedScene" uid="uid://lxcapyreqm2x" path="res://Scenes/HUD.tscn" id="6_uevwl"]
 [ext_resource type="PackedScene" uid="uid://duoxu2spje7pd" path="res://Scenes/TileMap/Level-3.tscn" id="7_kca5f"]
-[ext_resource type="PackedScene" uid="uid://dcw8ugjvlgn35" path="res://Scenes/DynamicScene.tscn" id="8_tqeg5"]
+[ext_resource type="PackedScene" path="res://Scenes/DynamicScene.tscn" id="8_tqeg5"]
+[ext_resource type="PackedScene" uid="uid://bh88yu2fniavr" path="res://Scenes/Pause.tscn" id="9_4q6ab"]
 [ext_resource type="AudioStream" uid="uid://63r0xfa1b0ot" path="res://Assets/Music/reganati-run-for-your-life-428712.mp3" id="9_am62g"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uevwl"]
@@ -100,6 +101,8 @@ TimeActivated = "Future"
 position = Vector2(18629, -1741)
 scale = Vector2(2, 2)
 TimeActivated = "Futurex"
+
+[node name="Pause" parent="." unique_id=673808232 instance=ExtResource("9_4q6ab")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=551982192]
 stream = ExtResource("9_am62g")

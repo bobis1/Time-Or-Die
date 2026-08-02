@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bp71p318uoxi" path="res://Scripts/Killzone.gd" id="3_75qqu"]
 [ext_resource type="PackedScene" uid="uid://dray08srhtogo" path="res://Scenes/FamilyHeriloom.tscn" id="5_5hdhp"]
 [ext_resource type="PackedScene" uid="uid://lxcapyreqm2x" path="res://Scenes/HUD.tscn" id="6_t07gs"]
+[ext_resource type="PackedScene" uid="uid://bh88yu2fniavr" path="res://Scenes/Pause.tscn" id="7_8r5np"]
 [ext_resource type="AudioStream" uid="uid://dfuwdcoku2f2l" path="res://Assets/Music/cyberwave-orchestra-puzzle-game-bright-casual-video-game-music-249202.mp3" id="7_t07gs"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5hdhp"]
@@ -39,6 +40,8 @@ scale = Vector2(6, 6)
 [node name="TimeMenu" parent="." unique_id=390901523 instance=ExtResource("2_8r5np")]
 
 [node name="HUD" parent="." unique_id=398721829 instance=ExtResource("6_t07gs")]
+
+[node name="Pause" parent="." unique_id=673808232 instance=ExtResource("7_8r5np")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1233277627]
 stream = ExtResource("7_t07gs")
