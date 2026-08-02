@@ -3,11 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://dray08srhtogo" path="res://Scenes/FamilyHeriloom.tscn" id="1_bomoa"]
 [ext_resource type="Script" uid="uid://bp71p318uoxi" path="res://Scripts/Killzone.gd" id="2_aowoj"]
 [ext_resource type="PackedScene" uid="uid://ol04e8bm2ii4" path="res://Prefabs/player.tscn" id="3_vs31q"]
-[ext_resource type="PackedScene" path="res://Scenes/HUD.tscn" id="5_io0hp"]
+[ext_resource type="PackedScene" uid="uid://lxcapyreqm2x" path="res://Scenes/HUD.tscn" id="5_io0hp"]
 [ext_resource type="PackedScene" uid="uid://c2pvehkw3o050" path="res://Scenes/TileMap/Level-2.tscn" id="7_bomoa"]
 [ext_resource type="PackedScene" uid="uid://bm7wv4krbn0kl" path="res://Scenes/Turret.tscn" id="7_wgrye"]
 [ext_resource type="PackedScene" uid="uid://dccbcpv4myn3e" path="res://Scenes/TimeMenu.tscn" id="7_yqxct"]
-[ext_resource type="PackedScene" uid="uid://dy0vwjgltm1aw" path="res://Scenes/Dynamic.tscn" id="9_vs31q"]
+[ext_resource type="PackedScene" path="res://Scenes/Dynamic.tscn" id="9_vs31q"]
 [ext_resource type="FontFile" uid="uid://b7weglo7fwrs1" path="res://Assets/BoldPixels/BoldPixels.otf" id="10_83jt6"]
 [ext_resource type="AudioStream" uid="uid://brfns0w8m6nxf" path="res://Assets/Music/djartmusic-the-world-of-8-bit-games-301273.mp3" id="11_8yefm"]
 

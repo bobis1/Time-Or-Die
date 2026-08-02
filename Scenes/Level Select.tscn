@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b8ngev0o5uimx"]
+[gd_scene format=3 uid="uid://d2ce230iovtlq"]
 
 [ext_resource type="Script" uid="uid://bna41mpryejyu" path="res://Scripts/levelSelect.gd" id="1_1cuwq"]
 [ext_resource type="FontFile" uid="uid://dbg3mrrb1payx" path="res://Assets/BoldPixels/boldpixels.ttf" id="1_r4p04"]
@@ -18,6 +18,7 @@ theme_override_fonts/font = ExtResource("1_r4p04")
 text = "Time Or Die"
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=1744094435]
+texture_filter = 1
 offset_left = 244.0
 offset_top = 100.0
 offset_right = 359.0

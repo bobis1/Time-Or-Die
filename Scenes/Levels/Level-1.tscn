@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dccbcpv4myn3e" path="res://Scenes/TimeMenu.tscn" id="2_8r5np"]
 [ext_resource type="Script" uid="uid://bp71p318uoxi" path="res://Scripts/Killzone.gd" id="3_75qqu"]
 [ext_resource type="PackedScene" uid="uid://dray08srhtogo" path="res://Scenes/FamilyHeriloom.tscn" id="5_5hdhp"]
-[ext_resource type="PackedScene" path="res://Scenes/HUD.tscn" id="6_t07gs"]
+[ext_resource type="PackedScene" uid="uid://lxcapyreqm2x" path="res://Scenes/HUD.tscn" id="6_t07gs"]
 [ext_resource type="AudioStream" uid="uid://dfuwdcoku2f2l" path="res://Assets/Music/cyberwave-orchestra-puzzle-game-bright-casual-video-game-music-249202.mp3" id="7_t07gs"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5hdhp"]
@@ -22,6 +22,7 @@ JUMP_VELOCITY = -1000.0
 
 [node name="Camera" type="Camera2D" parent="Player" unique_id=416328624]
 position = Vector2(61, 64)
+zoom = Vector2(0.5, 0.5)
 limit_left = -3000
 limit_bottom = 812
 
@@ -42,6 +43,7 @@ scale = Vector2(6, 6)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1233277627]
 stream = ExtResource("7_t07gs")
+volume_db = -10.0
 autoplay = true
 
 [connection signal="body_entered" from="Killzone" to="Killzone" method="_on_body_entered"]

@@ -5,13 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://ccxkhoox5timg" path="res://Assets/SpeechBubble.png" id="2_wy1jr"]
 [ext_resource type="Texture2D" uid="uid://cccltio2dnudl" path="res://Assets/PlayerBody.png" id="3_30a6j"]
 [ext_resource type="Texture2D" uid="uid://cug3thv2v84il" path="res://Assets/Untitled.png" id="4_gdvsk"]
-[ext_resource type="Script" uid="uid://ur3udf355630" path="res://Scripts/SpeechBubble.gd" id="6_1tn17"]
+[ext_resource type="Script" path="res://Scripts/SpeechBubble.gd" id="6_1tn17"]
 [ext_resource type="AudioStream" uid="uid://brfns0w8m6nxf" path="res://Assets/Music/djartmusic-the-world-of-8-bit-games-301273.mp3" id="7_aoaov"]
 [ext_resource type="Script" uid="uid://cd2hecp571xf7" path="res://Scripts/s.gd" id="8_jmbix"]
 [ext_resource type="AudioStream" uid="uid://cxlyxhqkn787l" path="res://Assets/Music/viacheslavstarostin-retro-arcade-game-music-408074.mp3" id="9_gxl4w"]
 [ext_resource type="AudioStream" uid="uid://dfuwdcoku2f2l" path="res://Assets/Music/cyberwave-orchestra-puzzle-game-bright-casual-video-game-music-249202.mp3" id="10_53q2i"]
 
 [node name="LevelSelect" type="Node2D" unique_id=104113014]
+texture_filter = 1
 script = ExtResource("1_1cuwq")
 
 [node name="Control" type="Control" parent="." unique_id=1060660827]
@@ -30,7 +31,7 @@ offset_bottom = 54.0
 scale = Vector2(3, 3)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("1_r4p04")
-text = "Time Or Die"
+text = "Time Until Die"
 
 [node name="GridContainer" type="GridContainer" parent="Control" unique_id=1744094435]
 layout_mode = 0
@@ -56,13 +57,9 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_r4p04")
 text = "3"
 
-[node name="Bounus" type="Button" parent="Control/GridContainer" unique_id=978737550]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_r4p04")
-text = "Bounus"
-
 [node name="Silly" type="Button" parent="Control/GridContainer" unique_id=273906512]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_r4p04")
 text = "Silly"
 
 [node name="PlayerRig" type="Control" parent="Control" unique_id=1564041237]
@@ -125,12 +122,12 @@ wait_time = 5.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control" unique_id=1257551985]
 stream = ExtResource("7_aoaov")
+volume_db = -10.0
 script = ExtResource("8_jmbix")
 musics = Array[AudioStream]([ExtResource("7_aoaov"), ExtResource("9_gxl4w"), ExtResource("10_53q2i")])
 
 [connection signal="pressed" from="Control/GridContainer/1" to="." method="_on1__pressed"]
 [connection signal="pressed" from="Control/GridContainer/2" to="." method="_on2__pressed"]
 [connection signal="pressed" from="Control/GridContainer/3" to="." method="_on3__pressed"]
-[connection signal="pressed" from="Control/GridContainer/Bounus" to="." method="_on_bounus_pressed"]
 [connection signal="pressed" from="Control/GridContainer/Silly" to="." method="_on_silly_pressed"]
 [connection signal="timeout" from="Control/PlayerRig/Label/Timer" to="Control/PlayerRig/Label" method="_on_timer_timeout"]

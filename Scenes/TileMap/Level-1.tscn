@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://pyf023fdpdwc" path="res://Scenes/TileMap/TileSet.tres" id="1_5iyjr"]
 [ext_resource type="FontFile" uid="uid://dbg3mrrb1payx" path="res://Assets/BoldPixels/boldpixels.ttf" id="2_5iyjr"]
-[ext_resource type="PackedScene" uid="uid://dcw8ugjvlgn35" path="res://Scenes/DynamicScene.tscn" id="3_wcaum"]
+[ext_resource type="PackedScene" path="res://Scenes/DynamicScene.tscn" id="3_wcaum"]
 
 [node name="TileMap" type="TileMap" unique_id=882838685]
 texture_filter = 1
@@ -118,11 +118,6 @@ TimeActivated = "Past"
 
 [node name="DynamicScene2" parent="Dynamic Islands" unique_id=1292840584 instance=ExtResource("3_wcaum")]
 position = Vector2(1273.25, -44.500008)
-scale = Vector2(0.15, 0.15)
-TimeActivated = "Present"
-
-[node name="DynamicScene4" parent="Dynamic Islands" unique_id=1780655484 instance=ExtResource("3_wcaum")]
-position = Vector2(1169, -58.5)
 scale = Vector2(0.15, 0.15)
 TimeActivated = "Present"
 
