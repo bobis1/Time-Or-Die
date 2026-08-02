@@ -8,7 +8,7 @@
 size = Vector2(210, 212)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i4wwf"]
-radius = 737.19604
+radius = 3500.0
 
 [node name="Turret" type="StaticBody2D" unique_id=1586562824]
 collision_layer = 2
