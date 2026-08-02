@@ -14,16 +14,14 @@ script = ExtResource("1_bq2cw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=79774140]
 position = Vector2(149, -143)
-scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_bq2cw")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=555959051]
-offset_left = -20.999985
-offset_top = 22.0
-offset_right = 149.00002
-offset_bottom = 194.0
+offset_left = 57.333336
+offset_top = -52.0
+offset_right = 227.33334
+offset_bottom = 120.0
 rotation = -1.5707964
-scale = Vector2(2, 2)
 texture = ExtResource("1_4vug3")
 
 [node name="Timer" type="Timer" parent="." unique_id=788334080]
