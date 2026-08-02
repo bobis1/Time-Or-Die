@@ -20,4 +20,5 @@ func _on_timer_timeout() -> void:
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("Player"):
 		Globals.lives -= 1
+		queue_free()
 	pass 

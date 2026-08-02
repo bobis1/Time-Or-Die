@@ -7,6 +7,7 @@
 size = Vector2(166.5, 165.5)
 
 [node name="Missle" type="RigidBody2D" unique_id=2090227441]
+scale = Vector2(0.75, 0.75)
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_bq2cw")
