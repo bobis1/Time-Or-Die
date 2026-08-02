@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Rewind"
+config/name="Time Until Die"
 run/main_scene="uid://du2n20ky2q6nk"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0.38234815, 0.6449025, 0.7966069, 1)
