@@ -1,6 +1,6 @@
 extends Area2D
 
-var SPEED = -670
+var SPEED = -500
 var distance: float = 0.0
 
 func _process(delta: float):
